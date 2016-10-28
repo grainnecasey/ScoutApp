@@ -21,14 +21,94 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_match_scout_stronghold" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+
+    <Button
+        android:text="+1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:id="@+id/btnGain1"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center_vertical|right"
+        android:layout_gravity="center_vertical|left"
+        android:onClick="MatchScoutStronghold.changeNum(1)"
+        />
+
+    <Button
+        android:text="-1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLose1"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center_vertical|left"
+        android:layout_gravity="center_vertical|right"
+        android:onClick="MatchScoutStronghold.changeNum(-1)"
+        />
+
+    <TextView
+        android:text="0"
+        android:layout_width="103dp"
+        android:layout_height="30dp"
+        android:id="@+id/textViewVal"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center_vertical|center"
+        android:layout_gravity="center_vertical|center"
+        />
+
+    <include layout="@layout/content_match_scout_stronghold"
+        android:id="@+id/include" />
+
+    <TextView
+        android:text="Default Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewStatChoice"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|center"
+        android:layout_gravity="bottom|center"/>
+
+    <Button
+        android:text="Low Bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLowBar"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|left"
+        android:layout_gravity="bottom|right"
+        android:onClick="MatchScoutStronghold.statChoice = 0; MatchScoutStronghold.changeDisplayVal();"
+        />
+
+    <Button
+        android:text="CDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|center_horizontal"
+        android:layout_gravity="bottom|left"
+        android:onClick="MatchScoutStronghold.statChoice = 1; MatchScoutStronghold.changeDisplayVal();"
+        />
+
+    <Button
+        android:text="Ramparts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button6"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|center_horizontal"
+        android:layout_gravity="bottom|right"
+        android:onClick="MatchScoutStronghold.statChoice = 2; MatchScoutStronghold.changeDisplayVal();"
+        />
+
+    <Button
+        android:text="Moat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button7"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|right"
+        android:layout_gravity="bottom|left"
+        android:onClick="MatchScoutStronghold.statChoice = 3; MatchScoutStronghold.changeDisplayVal();"
+        />
 
 </android.support.design.widget.CoordinatorLayout>
