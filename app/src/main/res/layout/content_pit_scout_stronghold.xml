@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_pit_scout_stronghold"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.grainne.scout.PitScoutStronghold"
+    tools:showIn="@layout/activity_pit_scout_stronghold">
+
+    <Switch
+        android:text="Cheval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lowbar"
+        android:layout_alignLeft="@+id/lowbar"
+        android:layout_alignStart="@+id/lowbar"
+        android:id="@+id/cheval"
+        android:textSize="16sp" />
+
+    <Switch
+        android:text="RockWall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cheval"
+        android:layout_alignLeft="@+id/cheval"
+        android:layout_alignStart="@+id/cheval"
+        android:id="@+id/RockWall"
+        android:textSize="16sp" />
+
+    <Switch
+        android:text="roughterrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RockWall"
+        android:layout_alignLeft="@+id/RockWall"
+        android:layout_alignStart="@+id/RockWall"
+        android:id="@+id/roughterrain"
+        android:textSize="16sp" />
+
+    <Switch
+        android:text="Moat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/roughterrain"
+        android:layout_alignLeft="@+id/roughterrain"
+        android:layout_alignStart="@+id/roughterrain"
+        android:id="@+id/Moat"
+        android:textSize="16sp" />
+
+    <Switch
+        android:text="Ramparts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ramparts"
+        android:textSize="16sp"
+        android:layout_below="@+id/roughterrain"
+        android:layout_alignLeft="@+id/sallyport"
+        android:layout_alignStart="@+id/sallyport" />
+
+    <Switch
+        android:text="SallyPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sallyport"
+        android:textSize="16sp"
+        android:layout_above="@+id/portcullis"
+        android:layout_alignLeft="@+id/drawbridge"
+        android:layout_alignStart="@+id/drawbridge" />
+
+    <Switch
+        android:text="DrawBridge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/drawbridge"
+        android:textSize="16sp"
+        android:layout_above="@+id/sallyport"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/teamNum"
+        android:layout_toEndOf="@+id/teamNum" />
+
+    <TextView
+        android:text="Shooting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textSize="24sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Moat" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/teamNum"
+        android:text="Team Number"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Shot Quality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:textSize="18sp"
+        android:layout_below="@+id/highgoal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp" />
+
+    <Switch
+        android:text="LowGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lowgoal"
+        android:textSize="16sp"
+        android:layout_alignBaseline="@+id/highgoal"
+        android:layout_alignBottom="@+id/highgoal"
+        android:layout_toRightOf="@+id/RockWall"
+        android:layout_toEndOf="@+id/RockWall" />
+
+    <TextView
+        android:text="Defenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textSize="24sp"
+        android:layout_below="@+id/teamNum"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:text="LowBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lowbar"
+        android:textSize="16sp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/highgoal"
+        android:layout_alignStart="@+id/highgoal" />
+
+    <Switch
+        android:text="Portcullis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/portcullis"
+        android:textSize="16sp"
+        android:layout_above="@+id/ramparts"
+        android:layout_alignRight="@+id/ramparts"
+        android:layout_alignEnd="@+id/ramparts" />
+
+    <TextView
+        android:text="Autonomous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="24sp"
+        android:layout_below="@+id/ratingBar2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp" />
+
+    <Switch
+        android:text="HighGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/highgoal"
+        android:textSize="16sp"
+        android:layout_marginRight="53dp"
+        android:layout_marginEnd="53dp"
+        android:layout_below="@+id/textView4"
+        android:layout_toLeftOf="@+id/ramparts"
+        android:layout_toStartOf="@+id/ramparts" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Enter Auto Comments"
+        android:ems="10"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/autocomments"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/submit"
+        android:background="@color/colorPrimary"
+        android:elevation="24dp"
+        android:onClick="submitOnClick"
+        style="@style/Widget.AppCompat.Button" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar2"
+        android:clickable="true"
+        android:maxHeight="47dp"
+        android:minHeight="38dp"
+        android:numStars="5"
+        android:isIndicator="false"
+        android:stepSize="5"
+        android:layout_below="@+id/lowgoal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

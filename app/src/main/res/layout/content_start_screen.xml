@@ -20,7 +20,8 @@
         android:layout_marginTop="149dp"
         android:id="@+id/button"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="buttonOnClick"/>
 
     <TextView
         android:text="Pick Game"

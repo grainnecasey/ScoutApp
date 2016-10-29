@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import static com.example.grainne.scout.R.styleable.FloatingActionButton;
+import static com.example.grainne.scout.R.styleable.Toolbar;
+
 public class MatchScoutStronghold extends AppCompatActivity {
 
     @Override

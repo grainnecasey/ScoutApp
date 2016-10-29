@@ -21,6 +21,10 @@
         <activity
             android:name=".MatchScoutStronghold"
             android:label="@string/title_activity_match_scout_stronghold"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PitScoutStronghold"
+            android:label="@string/title_activity_pit_scout_stronghold"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
