@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_match_scout_stronghold">MatchScoutStronghold</string>
     <string name="title_activity_pit_scout_stronghold">PitScoutStronghold</string>
+    <string name="title_activity_pit_confirmation">PitConfirmation</string>
+    <string name="title_activity_stronghold_menu">StrongholdMenu</string>
 </resources>
