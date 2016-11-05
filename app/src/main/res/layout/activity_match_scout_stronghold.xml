@@ -9,27 +9,8 @@
 
     <include layout="@layout/content_match_scout_stronghold"
         android:id="@+id/include"
-        android:layout_height="0dp" />
-
-    <TextView
-        android:text="   Values"
-        android:layout_width="136dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="120dp"
-        android:id="@+id/textView8"
-        android:autoText="false"
-        android:textSize="30sp" />
-
-    <TextView
-        android:text="Shooting"
-        android:layout_width="136dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
-        android:layout_marginLeft="120dp"
-        android:id="@+id/textView9"
-        android:autoText="false"
-        android:textSize="30sp" />
+        android:layout_height="0dp"
+        android:layout_width="match_parent" />
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -46,53 +27,263 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <TextView
-        android:text="Default Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewStatChoice"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center"
-        android:layout_gravity="bottom|center"/>
-
     <Button
         android:text="CDF"
-        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:id="@+id/btnCDF"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="top|center_horizontal"
         android:layout_gravity="bottom|left"
-        android:onClick="MatchScoutStronghold.statChoice = 1; MatchScoutStronghold.changeDisplayVal();"
+        android:onClick="CDFOnCLick"
         android:layout_marginTop="140dp"
-        android:layout_marginLeft="200dp" />
+        android:layout_marginLeft="190dp"
+        android:layout_width="130dp"
+        android:id="@+id/btnCDF" />
 
     <Button
         android:text="Sally Port"
-        android:id="@+id/btnSallyPort"
         android:layout_height="wrap_content"
-        android:layout_width="154dp"
         android:editable="false"
         android:layout_gravity="top|right"
         app:layout_anchor="@+id/include"
         android:layout_marginTop="100dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_width="130dp"
+        android:id="@+id/btnSallyPort"
+        android:onClick="sallyOnClick" />
 
     <Button
         android:text="Rough Terrain"
-        android:layout_width="153dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_width="130dp"
+        android:textSize="12sp"
+        android:id="@+id/btnRoughTerrain"
+        android:onClick="roughOnCLick" />
 
     <Button
         android:text="Drawbridge"
-        android:layout_width="219dp"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
-        android:id="@+id/btnDrawbridge"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="260dp"
-        app:layout_anchor="@+id/include" />
+        app:layout_anchor="@+id/include"
+        android:id="@+id/btnDrawbridge"
+        android:onClick="drawOnCLick" />
+
+    <Button
+        android:text="High Goal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="190dp"
+        app:layout_anchor="@+id/include"
+        android:layout_width="130dp"
+        android:id="@+id/btnHighGoal"
+        android:onClick="highGoalOnCLick" />
+
+    <Button
+        android:text="Rock Wall"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="190dp"
+        app:layout_anchor="@+id/include"
+        android:layout_width="130dp"
+        android:id="@+id/btnRockWall"
+        android:onClick="rockOnCLick" />
+
+    <Button
+        android:text="Portcullis"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="190dp"
+        android:layout_width="130dp"
+        android:id="@+id/btnPortcullis"
+        android:onCLick="portOnClick"
+        android:onClick="portOnCLick" />
+
+    <Button
+        android:text="Ramparts"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|left"
+        android:layout_gravity="top|right"
+        android:onClick="rampOnCLick"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/btnRamparts" />
+
+    <Button
+        android:text="Moat"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|left"
+        android:layout_gravity="top|right"
+        android:onClick="moatOnCLick"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="190dp"
+        android:layout_width="130dp"
+        android:id="@+id/btnMoat" />
+
+    <Button
+        android:text="+1"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|left"
+        android:layout_gravity="top|right"
+        android:onClick="gainOnClick"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="440dp"
+        android:layout_width="120dp"
+        android:id="@+id/btnGain1" />
+
+    <Button
+        android:text="-1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|left"
+        android:layout_gravity="top|right"
+        android:onClick="loseOnClick"
+        android:layout_marginTop="440dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/btnLose1" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|left"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="445dp"
+        android:layout_marginLeft="140dp"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtValue" />
+
+    <Button
+        android:text="Low Goal"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:layout_gravity="top|right"
+        app:layout_anchor="@+id/include"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="130dp"
+        android:id="@+id/btnLowGoal"
+        android:onClick="lowGoalOnCLick (MatchScoutStronghold)" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="325dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtRockWallVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginLeft="325dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtPortcullisVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="325dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtMoatVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="265dp"
+        android:layout_marginLeft="245dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtDrawbridgeVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="355dp"
+        android:layout_marginLeft="325dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtHighGoalVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="355dp"
+        android:layout_marginLeft="145dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtLowGoalVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="145dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtRampartsVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginLeft="145dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtLowBarVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="145dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtRoughTerrainVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="325dp"
+        android:elevation="1dp"
+        android:textSize="30sp"
+        android:id="@+id/txtCDFVal" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:id="@+id/txtSallyPortVal"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="145dp"
+        android:elevation="1dp"
+        android:textSize="30sp" />
 
     <TextView
         android:text="Defences"
@@ -100,114 +291,66 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:layout_marginLeft="120dp"
-        android:id="@+id/@+id/txtPrompt1"
+        android:id="@+id/txtPrompt1"
         android:autoText="false"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="   Values"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="120dp"
+        android:autoText="false"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtPrompt3" />
+
+    <TextView
+        android:text="Shooting"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:layout_marginLeft="120dp"
+        android:autoText="false"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:id="@+id/txtPrompt2" />
 
     <Button
-        android:text="Rock Wall"
-        android:layout_width="154dp"
+        android:text="Submit"
+        android:layout_width="138dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="200dp"
-        app:layout_anchor="@+id/include" />
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="500dp"
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+        android:background="@android:color/holo_green_light"
+        android:id="@+id/btnSubmit"
+        android:onClick="submitMatchOnClick" />
 
-    <Button
-        android:text="Rock Wall"
-        android:layout_width="154dp"
+    <EditText
+        android:layout_width="153dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button8"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="200dp"
-        app:layout_anchor="@+id/include" />
+        android:inputType="number"
+        android:text="Enter Team #"
+        android:ems="10"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="24sp"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:id="@+id/edtTeam" />
 
     <Button
         android:text="Low Bar"
-        android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:id="@+id/btnLowBar"
-        app:layout_anchor="@+id/include"
-        android:onClick="MatchScoutStronghold.statChoice = 0; MatchScoutStronghold.changeDisplayVal();"
+        android:onClick="lowBarOnCLick"
         android:layout_marginTop="180dp"
-        android:layout_marginLeft="20dp" />
-
-    <Button
-        android:text="Portcullus"
-        android:layout_width="154dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPortcullus"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="200dp" />
-
-    <Button
-        android:text="Ramparts"
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnRamparts"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="top|left"
-        android:layout_gravity="top|right"
-        android:onClick="MatchScoutStronghold.statChoice = 2; MatchScoutStronghold.changeDisplayVal();"
-        android:layout_marginTop="220dp"
-        android:layout_marginLeft="20dp" />
-
-    <Button
-        android:text="Moat"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnMoat"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="top|left"
-        android:layout_gravity="top|right"
-        android:onClick="MatchScoutStronghold.statChoice = 3; MatchScoutStronghold.changeDisplayVal();"
-        android:layout_marginTop="220dp"
-        android:layout_marginLeft="200dp" />
-
-    <Button
-        android:text="+1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnGain1"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="top|left"
-        android:layout_gravity="top|right"
-        android:onClick="MatchScoutStronghold.changeNum(1)"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="450dp" />
-
-    <Button
-        android:text="-1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnLose1"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="top|left"
-        android:layout_gravity="top|right"
-        android:onClick="MatchScoutStronghold.changeNum(-1)"
-        android:layout_marginTop="450dp" />
-
-    <TextView
-        android:text="0"
-        android:layout_width="103dp"
-        android:layout_height="30dp"
-        android:id="@+id/textViewVal"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="top|left"
-        android:layout_gravity="top|right"
-        android:layout_marginTop="460dp"
-        android:layout_marginLeft="140dp"
-        android:textSize="30sp"
-        android:textAlignment="center" />
-
-    <Button
-        android:text="Low Goal"
-        android:id="@+id/button2"
-        android:layout_height="wrap_content"
-        android:layout_width="142dp"
-        android:editable="false"
-        android:layout_gravity="top|right"
-        app:layout_anchor="@+id/include"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_width="130dp"
+        android:id="@+id/btnLowBar" />
 
 </android.support.design.widget.CoordinatorLayout>
