@@ -25,6 +25,14 @@
         <activity
             android:name=".PitScoutStronghold"
             android:label="@string/title_activity_pit_scout_stronghold"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PitConfirmation"
+            android:label="@string/title_activity_pit_confirmation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StrongholdMenu"
+            android:label="@string/title_activity_stronghold_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

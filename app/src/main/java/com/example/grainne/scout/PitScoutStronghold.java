@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -123,9 +124,17 @@ public class PitScoutStronghold extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            Intent i = new Intent(PitScoutStronghold.this, PitConfirmation.class);
+            startActivity(i);
+
 
         } else {
-            //display error message
+            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+            dlgAlert.setMessage("You cannot submit without entering a team number!");
+            dlgAlert.setTitle("Wait a diddly darn second!");
+            dlgAlert.setPositiveButton("Sorry my bad", null);
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
         }
 
 

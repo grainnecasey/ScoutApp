@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.grainne.scout.StartScreen">
+    tools:context="com.example.grainne.scout.StrongholdMenu">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,6 +21,9 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <include layout="@layout/content_stronghold_menu"
+        android:id="@+id/include2" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -29,23 +32,34 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <Button
-        android:text="STRONGHOLD"
-        android:layout_width="171dp"
-        android:layout_height="71dp"
-        android:id="@+id/stronghold"
-        android:textSize="18sp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="400dp" />
-
     <TextView
-        android:text="Pick Game"
+        android:text="Pit Scout or Match Scout?"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/strongholdTitle"
+        android:layout_marginTop="100dp"
+        android:textSize="30sp"
+        android:layout_marginLeft="30dp"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="Stronghold Match Scout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/title"
-        android:textSize="50sp"
+        android:id="@+id/strongMatch"
+        android:textSize="18sp"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="60dp"
+        android:onClick="matchButtonOnClick"/>
+
+    <Button
+        android:text="Stronghold Pit Scout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strongPit"
+        android:textSize="18sp"
         android:layout_marginLeft="75dp"
-        android:layout_marginTop="150dp"
-        android:onClick="buttonOnClick"/>
+        android:layout_marginTop="325dp"
+        android:onClick="pitButtonOnClick"/>
 
 </android.support.design.widget.CoordinatorLayout>
