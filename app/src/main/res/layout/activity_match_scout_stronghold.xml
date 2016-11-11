@@ -98,8 +98,7 @@
         android:layout_marginLeft="190dp"
         android:layout_width="130dp"
         android:id="@+id/btnPortcullis"
-        android:onCLick="portOnClick"
-        android:onClick="portOnCLick" />
+        android:onClick="portOnClick"/>
 
     <Button
         android:text="Ramparts"

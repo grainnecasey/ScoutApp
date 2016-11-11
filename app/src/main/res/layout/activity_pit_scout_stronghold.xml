@@ -21,8 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_pit_scout_stronghold" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -30,5 +28,183 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <TextView
+        android:text="Pit Scout Form"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:id="@+id/title"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textColor="@android:color/background_light"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Team Number"
+        android:ems="10"
+        android:id="@+id/teamNum"
+        android:layout_marginTop="55dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Scouter Name"
+        android:ems="10"
+        android:id="@+id/scouterName"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="175dp" />
+
+    <Switch
+        android:text="Low Bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lowbar"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="25dp" />
+
+    <Switch
+        android:text="Cheval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cheval"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="140dp" />
+
+    <Switch
+        android:text="Draw Bridge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/draw"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="250dp" />
+
+    <Switch
+        android:text="Rock Wall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rock"
+        android:layout_marginTop="165dp"
+        android:layout_marginLeft="20dp" />
+
+    <Switch
+        android:text="Sally Port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sally"
+        android:layout_marginTop="165dp"
+        android:layout_marginLeft="140dp" />
+
+    <Switch
+        android:text="Rouch Terrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rough"
+        android:layout_marginTop="165dp"
+        android:layout_marginLeft="250dp" />
+
+    <Switch
+        android:text="Portcullis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/port"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="20dp" />
+
+    <Switch
+        android:text="Moat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moat"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="140dp" />
+
+    <Switch
+        android:text="Ramparts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ramp"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="250dp" />
+
+    <TextView
+        android:text="Defenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/defTitle"
+        android:layout_marginTop="100dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Shooting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shootTitle"
+        android:layout_marginTop="225dp"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Switch
+        android:text="Low Goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lowg"
+        android:layout_marginTop="255dp"
+        android:layout_marginLeft="150dp" />
+
+    <Switch
+        android:text="High Goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/highg"
+        android:layout_marginTop="255dp"
+        android:layout_marginLeft="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Quality (1-5)"
+        android:ems="10"
+        android:id="@+id/shotQual"
+        android:layout_marginTop="245dp"
+        android:layout_marginLeft="250dp" />
+
+    <TextView
+        android:text="Autonomous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoTitle"
+        android:layout_marginTop="285dp"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <EditText
+        android:layout_width="373dp"
+        android:layout_height="95dp"
+        android:inputType="textPersonName"
+        android:text="Enter Autonomous Comments Here"
+        android:ems="10"
+        android:id="@+id/autoCom"
+        android:layout_marginTop="310dp" />
+
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitBut"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="150dp"
+        android:elevation="20dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
 
 </android.support.design.widget.CoordinatorLayout>

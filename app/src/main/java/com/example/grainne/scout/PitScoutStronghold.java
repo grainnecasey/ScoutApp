@@ -28,11 +28,14 @@ public class PitScoutStronghold extends AppCompatActivity {
     boolean lowBarBool;
     boolean highBoalBool;
     boolean lowGoalBool;
+    boolean portBool;
 
     //rating bar result?
 
+    String shotQualSt;
     String teamNumSt;
     String autoComSt;
+    String scoutNameSt;
 
     Switch chevalSw;
     Switch rockWallSw;
@@ -42,12 +45,13 @@ public class PitScoutStronghold extends AppCompatActivity {
     Switch sallyPortSw;
     Switch drawBridgeSw;
     Switch lowBarSw;
+    Switch portSw;
 
     Switch highGoalSw;
     Switch lowGoalSw;
 
-    RatingBar shotQualBar;
-
+    EditText shotQualNum;
+    EditText scoutName;
     EditText teamNum;
     EditText autoComments;
 
@@ -68,19 +72,20 @@ public class PitScoutStronghold extends AppCompatActivity {
         });
 
         chevalSw = (Switch) findViewById(R.id.cheval);
-        rockWallSw = (Switch) findViewById(R.id.RockWall);
-        roughTerrainSw = (Switch) findViewById(R.id.roughterrain);
-        moatSw = (Switch) findViewById(R.id.Moat);
+        rockWallSw = (Switch) findViewById(R.id.rock);
+        roughTerrainSw = (Switch) findViewById(R.id.rough);
+        moatSw = (Switch) findViewById(R.id.moat);
         rampartsSw = (Switch) findViewById(R.id.ramparts);
-        sallyPortSw = (Switch) findViewById(R.id.sallyport);
-        drawBridgeSw = (Switch) findViewById(R.id.drawbridge);
+        sallyPortSw = (Switch) findViewById(R.id.sally);
+        drawBridgeSw = (Switch) findViewById(R.id.draw);
         lowBarSw = (Switch) findViewById(R.id.lowbar);
+        portSw = (Switch) findViewById(R.id.port);
 
-        highGoalSw = (Switch) findViewById(R.id.highgoal);
-        lowGoalSw = (Switch) findViewById(R.id.lowgoal);
+        highGoalSw = (Switch) findViewById(R.id.highg);
+        lowGoalSw = (Switch) findViewById(R.id.lowg);
 
-        shotQualBar = (RatingBar) findViewById(R.id.ratingBar2);
-
+        shotQualNum = (EditText) findViewById(R.id.shotQual);
+        scoutName = (EditText) findViewById(R.id.scouterName);
         teamNum = (EditText) findViewById(R.id.teamNum);
         autoComments = (EditText) findViewById(R.id.autocomments);
 
@@ -99,15 +104,18 @@ public class PitScoutStronghold extends AppCompatActivity {
         lowBarBool = lowBarSw.isChecked();
         highBoalBool = highGoalSw.isChecked();
         lowGoalBool = lowGoalSw.isChecked();
+        portBool = portSw.isChecked();
 
         teamNumSt = teamNum.toString();
         autoComSt = autoComments.toString();
+        scoutNameSt = scoutName.toString();
+        shotQualSt = shotQualNum.toString();
 
-        //rating bar?
 
         String output = chevalbool + "•" + rockWallBool + "•" + roughTerrainBool + "•" + moatBool + "•" +
-                rampartsBool + "•" + sallyPortBool + "•" + drawBridgeBool + "•" + lowBarBool + "•" + highBoalBool + "•" +
-                lowGoalBool + "•" + teamNumSt + "•" + autoComSt;
+                rampartsBool + "•" + sallyPortBool + "•" + drawBridgeBool + "•" + lowBarBool + "•" + portBool
+                + "•" + highBoalBool + "•" + lowGoalBool + "•" + teamNumSt + "•" + autoComSt + "•" + scoutNameSt
+                + "•" + shotQualSt;
 
         if (teamNumSt != null) {
 
