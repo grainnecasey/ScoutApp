@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.grainne.scout.MatchConfirmation">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <Button
+        android:text="Main Menu"
+        android:layout_width="191dp"
+        android:layout_height="108dp"
+        android:id="@+id/btnMainMenu"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="100dp"
+        android:textSize="24sp"
+        android:onClick="mainMenOnClick" />
+
+    <TextView
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPrompt1"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="100dp"
+        android:text="Match Data Submitted!"
+        android:textSize="36sp" />
+
+    <Button
+        android:text="Stronghold Menu"
+        android:layout_width="191dp"
+        android:layout_height="108dp"
+        android:id="@+id/btnStronghold"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="100dp"
+        android:textSize="24sp"
+        android:onClick="strongMenOnClick" />
+
+    <include layout="@layout/content_activity_match_confirmation" />
+
+</android.support.design.widget.CoordinatorLayout>

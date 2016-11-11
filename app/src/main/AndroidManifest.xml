@@ -33,6 +33,10 @@
         <activity
             android:name=".StrongholdMenu"
             android:label="@string/title_activity_stronghold_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MatchConfirmation"
+            android:label="@string/title_activity_match_confirmation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

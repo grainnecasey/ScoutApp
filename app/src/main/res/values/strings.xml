@@ -5,4 +5,5 @@
     <string name="title_activity_pit_scout_stronghold">PitScoutStronghold</string>
     <string name="title_activity_pit_confirmation">PitConfirmation</string>
     <string name="title_activity_stronghold_menu">StrongholdMenu</string>
+    <string name="title_activity_match_confirmation">activity_match_confirmation</string>
 </resources>
