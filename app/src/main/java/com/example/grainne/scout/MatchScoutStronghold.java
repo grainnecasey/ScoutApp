@@ -1,6 +1,7 @@
 package com.example.grainne.scout;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -86,14 +87,7 @@ public class MatchScoutStronghold extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         SallyPort = (Button) findViewById(R.id.btnSallyPort);
         RockWall = (Button) findViewById(R.id.btnRockWall);
         RoughTerrain = (Button) findViewById(R.id.btnRoughTerrain);
@@ -154,7 +148,7 @@ public class MatchScoutStronghold extends AppCompatActivity {
         MainVal = LowBarVal;
     }
 
-    public void portOnCLick(View v) {
+    public void portOnClick(View v) {
         ValueSelector = 6;
         MainVal = PortcullisVal;
     }
@@ -174,13 +168,13 @@ public class MatchScoutStronghold extends AppCompatActivity {
         MainVal = DrawbridgeVal;
     }
 
-    public void lowGoalOnCLick(View v) {
+    public void lowGoalOnClick(View v) {
         ValueSelector = 10;
         MainVal = LowGoalVal;
     }
 
     public void highGoalOnCLick(View v) {
-        ValueSelector = 10;
+        ValueSelector = 11;
         MainVal = HighGoalVal;
     }
 
@@ -213,7 +207,7 @@ public class MatchScoutStronghold extends AppCompatActivity {
         } else if (ValueSelector == 7) {
             RampartsValue += 1;
             MainVal.setText(RampartsValue + "");
-            PortcullisVal.setText(RampartsValue + "");
+            RampartsVal.setText(RampartsValue + "");
         } else if (ValueSelector == 8) {
             MoatValue += 1;
             MainVal.setText(MoatValue + "");
@@ -311,6 +305,8 @@ public class MatchScoutStronghold extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            Intent i = new Intent(MatchScoutStronghold.this, MatchConfirmation.class);
+            startActivity(i);
 
         } else {
             //display error message for empty team number

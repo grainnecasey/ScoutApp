@@ -30,7 +30,7 @@ public class StartScreen extends AppCompatActivity {
             }
         });*/
     }
-/*
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -54,10 +54,10 @@ public class StartScreen extends AppCompatActivity {
     }
 
     public void buttonOnClick(View v) {
-        Intent i = new Intent(StartScreen.this, MatchScoutStronghold.class);
+        Intent i = new Intent(StartScreen.this, StrongholdMenu.class);
         startActivity(i);
 
 
 
-    }*/
+    }
 }

@@ -205,6 +205,7 @@
         android:elevation="20dp"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:onClick="submitOnClick"/>
 
 </android.support.design.widget.CoordinatorLayout>

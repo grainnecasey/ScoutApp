@@ -62,16 +62,6 @@
         android:onClick="roughOnCLick" />
 
     <Button
-        android:text="Drawbridge"
-        android:layout_width="158dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="260dp"
-        app:layout_anchor="@+id/include"
-        android:id="@+id/btnDrawbridge"
-        android:onClick="drawOnCLick" />
-
-    <Button
         android:text="High Goal"
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp"
@@ -172,7 +162,7 @@
         android:layout_marginLeft="10dp"
         android:layout_width="130dp"
         android:id="@+id/btnLowGoal"
-        android:onClick="lowGoalOnCLick (MatchScoutStronghold)" />
+        android:onClick="lowGoalOnClick" />
 
     <TextView
         android:text="0"
@@ -351,5 +341,14 @@
         android:layout_marginLeft="10dp"
         android:layout_width="130dp"
         android:id="@+id/btnLowBar" />
+
+    <Button
+        android:text="Drawbridge"
+        android:layout_width="139dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="270dp"
+        android:id="@+id/btnDrawbridge"
+        android:onClick="drawOnCLick" />
 
 </android.support.design.widget.CoordinatorLayout>
