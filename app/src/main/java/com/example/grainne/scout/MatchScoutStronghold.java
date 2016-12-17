@@ -16,8 +16,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 import static com.example.grainne.scout.R.styleable.FloatingActionButton;
 import static com.example.grainne.scout.R.styleable.Toolbar;
@@ -305,7 +308,7 @@ public class MatchScoutStronghold extends AppCompatActivity {
     public void submitMatchOnClick(View v) {
 
 
-        TeamNumSt = TeamNum.toString();
+        TeamNumSt = TeamNum.getText().toString();
 
 
         String output = SallyPortValue + "•" + RockWallValue + "•" + RoughTerrainValue + "•" + CDFValue + "•" +
@@ -314,11 +317,35 @@ public class MatchScoutStronghold extends AppCompatActivity {
 
         if (TeamNumSt != null) {
 
-            String filename = "matchscout.txt";
-            OutputStreamWriter outputStream;
+            String filename = "matchscout"+ TeamNumSt + ".txt";
+            //OutputStreamWriter outputStream;
 
             //File file = getStorageDir(filename);
+            File root = android.os.Environment.getExternalStorageDirectory();
+            //tv.append("\nExternal file system root: "+root);
 
+            // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
+
+            File dir = new File (root.getAbsolutePath() + "/download");
+            dir.mkdirs();
+            File file = new File(dir, filename);
+
+            try {
+                FileOutputStream f = new FileOutputStream(file);
+                PrintWriter pw = new PrintWriter(f);
+                pw.println(output);
+                pw.flush();
+                pw.close();
+                f.close();
+                System.out.println(file.getAbsolutePath());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                Log.i("FILENOTFOUND", "******* File not found");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+           // tv.append("\n\nFile written to "+file);
+/*
             try {
                 outputStream = new OutputStreamWriter(openFileOutput(filename, Context.MODE_WORLD_READABLE));
                 outputStream.write(output);
@@ -326,7 +353,7 @@ public class MatchScoutStronghold extends AppCompatActivity {
                 outputStream.close();
             } catch (Exception e) {
                 e.printStackTrace();
-            }
+            }*/
 
             Intent i = new Intent(MatchScoutStronghold.this, MatchConfirmation.class);
             startActivity(i);
