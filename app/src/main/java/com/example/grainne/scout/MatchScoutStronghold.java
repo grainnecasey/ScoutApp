@@ -1,18 +1,23 @@
 package com.example.grainne.scout;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 
 import static com.example.grainne.scout.R.styleable.FloatingActionButton;
 import static com.example.grainne.scout.R.styleable.Toolbar;
@@ -211,7 +216,7 @@ public class MatchScoutStronghold extends AppCompatActivity {
         } else if (ValueSelector == 8) {
             MoatValue += 1;
             MainVal.setText(MoatValue + "");
-            PortcullisVal.setText(MoatValue + "");
+            MoatVal.setText(MoatValue + "");
         } else if (ValueSelector == 9) {
             DrawbridgeValue += 1;
             MainVal.setText(DrawbridgeValue + "");
@@ -279,6 +284,23 @@ public class MatchScoutStronghold extends AppCompatActivity {
         }
     }
 
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    public File getStorageDir(String filen) {
+        // Get the directory for the user's public docs directory.
+        File file = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_DOCUMENTS), filen);
+        if (!file.mkdirs()) {
+            Log.e("MKDIRS_FAIL" ,"Directory not created");
+        }
+        return file;
+    }
 
     public void submitMatchOnClick(View v) {
 
@@ -292,14 +314,15 @@ public class MatchScoutStronghold extends AppCompatActivity {
 
         if (TeamNumSt != null) {
 
-            String filename = "pitscout" + TeamNumSt;
-            FileOutputStream outputStream;
+            String filename = "matchscout.txt";
+            OutputStreamWriter outputStream;
 
-            File file = new File(getFilesDir(), filename);
+            //File file = getStorageDir(filename);
 
             try {
-                outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-                outputStream.write(output.getBytes());
+                outputStream = new OutputStreamWriter(openFileOutput(filename, Context.MODE_WORLD_READABLE));
+                outputStream.write(output);
+                System.out.println(getFileStreamPath(filename));
                 outputStream.close();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -309,7 +332,15 @@ public class MatchScoutStronghold extends AppCompatActivity {
             startActivity(i);
 
         } else {
-            //display error message for empty team number
+            AlertDialog.Builder teamnumerror = new AlertDialog.Builder(this);
+            teamnumerror.setMessage("You must enter a team number before submitting").setTitle("Error");
+            teamnumerror.setPositiveButton("Start Game",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+            teamnumerror.show();
         }
 
     }
