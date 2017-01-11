@@ -1,6 +1,7 @@
 package com.example.grainne.scout;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,13 +9,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Switch;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class PitScoutStronghold extends AppCompatActivity {
 
@@ -106,10 +111,10 @@ public class PitScoutStronghold extends AppCompatActivity {
         lowGoalBool = lowGoalSw.isChecked();
         portBool = portSw.isChecked();
 
-        teamNumSt = teamNum.toString();
-        autoComSt = autoComments.toString();
-        scoutNameSt = scoutName.toString();
-        shotQualSt = shotQualNum.toString();
+        teamNumSt = teamNum.getText().toString();
+        autoComSt = autoComments.getText().toString();
+        scoutNameSt = scoutName.getText().toString();
+        shotQualSt = shotQualNum.getText().toString();
 
 
         String output = chevalbool + "•" + rockWallBool + "•" + roughTerrainBool + "•" + moatBool + "•" +
@@ -119,30 +124,47 @@ public class PitScoutStronghold extends AppCompatActivity {
 
         if (teamNumSt != null) {
 
-            String filename = "pitscout" + teamNumSt;
-            FileOutputStream outputStream;
+            String filename = "pitscout"+ teamNumSt + ".txt";
+            //OutputStreamWriter outputStream;
 
-            File file = new File(getFilesDir(), filename);
+            //File file = getStorageDir(filename);
+            File root = android.os.Environment.getExternalStorageDirectory();
+            //tv.append("\nExternal file system root: "+root);
+
+            // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
+
+            File dir = new File (root.getAbsolutePath() + "/download");
+            dir.mkdirs();
+            File file = new File(dir, filename);
 
             try {
-                outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-                outputStream.write(output.getBytes());
-                outputStream.close();
-            } catch (Exception e) {
+                FileOutputStream f = new FileOutputStream(file);
+                PrintWriter pw = new PrintWriter(f);
+                pw.println(output);
+                pw.flush();
+                pw.close();
+                f.close();
+                System.out.println(file.getAbsolutePath());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                Log.i("FILENOTFOUND", "******* File not found");
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            Intent i = new Intent(PitScoutStronghold.this, PitConfirmation.class);
+            Intent i = new Intent(PitScoutStronghold.this, MatchConfirmation.class);
             startActivity(i);
 
-
         } else {
-            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-            dlgAlert.setMessage("You cannot submit without entering a team number!");
-            dlgAlert.setTitle("Wait a diddly darn second!");
-            dlgAlert.setPositiveButton("Sorry my bad", null);
-            dlgAlert.setCancelable(true);
-            dlgAlert.create().show();
+            android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
+            teamnumerror.setMessage("You must enter a team number before submitting").setTitle("Error");
+            teamnumerror.setPositiveButton("Start Game",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+            teamnumerror.show();
         }
 
 

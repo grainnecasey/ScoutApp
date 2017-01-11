@@ -1,18 +1,26 @@
 package com.example.grainne.scout;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 import static com.example.grainne.scout.R.styleable.FloatingActionButton;
 import static com.example.grainne.scout.R.styleable.Toolbar;
@@ -211,7 +219,7 @@ public class MatchScoutStronghold extends AppCompatActivity {
         } else if (ValueSelector == 8) {
             MoatValue += 1;
             MainVal.setText(MoatValue + "");
-            PortcullisVal.setText(MoatValue + "");
+            MoatVal.setText(MoatValue + "");
         } else if (ValueSelector == 9) {
             DrawbridgeValue += 1;
             MainVal.setText(DrawbridgeValue + "");
@@ -279,11 +287,28 @@ public class MatchScoutStronghold extends AppCompatActivity {
         }
     }
 
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    public File getStorageDir(String filen) {
+        // Get the directory for the user's public docs directory.
+        File file = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_DOCUMENTS), filen);
+        if (!file.mkdirs()) {
+            Log.e("MKDIRS_FAIL" ,"Directory not created");
+        }
+        return file;
+    }
 
     public void submitMatchOnClick(View v) {
 
 
-        TeamNumSt = TeamNum.toString();
+        TeamNumSt = TeamNum.getText().toString();
 
 
         String output = SallyPortValue + "•" + RockWallValue + "•" + RoughTerrainValue + "•" + CDFValue + "•" +
@@ -292,24 +317,57 @@ public class MatchScoutStronghold extends AppCompatActivity {
 
         if (TeamNumSt != null) {
 
-            String filename = "pitscout" + TeamNumSt;
-            FileOutputStream outputStream;
+            String filename = "matchscout"+ TeamNumSt + ".txt";
+            //OutputStreamWriter outputStream;
 
-            File file = new File(getFilesDir(), filename);
+            //File file = getStorageDir(filename);
+            File root = android.os.Environment.getExternalStorageDirectory();
+            //tv.append("\nExternal file system root: "+root);
+
+            // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
+
+            File dir = new File (root.getAbsolutePath() + "/download");
+            dir.mkdirs();
+            File file = new File(dir, filename);
 
             try {
-                outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-                outputStream.write(output.getBytes());
+                FileOutputStream f = new FileOutputStream(file);
+                PrintWriter pw = new PrintWriter(f);
+                pw.println(output);
+                pw.flush();
+                pw.close();
+                f.close();
+                System.out.println(file.getAbsolutePath());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                Log.i("FILENOTFOUND", "******* File not found");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+           // tv.append("\n\nFile written to "+file);
+/*
+            try {
+                outputStream = new OutputStreamWriter(openFileOutput(filename, Context.MODE_WORLD_READABLE));
+                outputStream.write(output);
+                System.out.println(getFileStreamPath(filename));
                 outputStream.close();
             } catch (Exception e) {
                 e.printStackTrace();
-            }
+            }*/
 
             Intent i = new Intent(MatchScoutStronghold.this, MatchConfirmation.class);
             startActivity(i);
 
         } else {
-            //display error message for empty team number
+            AlertDialog.Builder teamnumerror = new AlertDialog.Builder(this);
+            teamnumerror.setMessage("You must enter a team number before submitting").setTitle("Error");
+            teamnumerror.setPositiveButton("Start Game",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+            teamnumerror.show();
         }
 
     }
