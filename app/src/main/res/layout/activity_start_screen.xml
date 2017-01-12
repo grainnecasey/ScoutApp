@@ -31,7 +31,7 @@
         android:id="@+id/stronghold"
         android:textSize="18sp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="300dp"
         android:onClick="buttonOnClick"/>
 
     <TextView
@@ -43,5 +43,14 @@
         android:layout_marginLeft="75dp"
         android:layout_marginTop="150dp"
         />
+
+    <Button
+        android:text="STEAMWORKS"
+        android:layout_width="171dp"
+        android:layout_height="73dp"
+        android:id="@+id/button2"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="420dp"
+        android:textSize="17sp" />
 
 </android.support.design.widget.CoordinatorLayout>
