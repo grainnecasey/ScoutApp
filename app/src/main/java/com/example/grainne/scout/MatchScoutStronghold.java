@@ -40,6 +40,8 @@ public class MatchScoutStronghold extends AppCompatActivity {
     public int HighGoalValue = 0;
     public int ValueSelector = 1;
 
+    public int matchCount = 1;
+
     //ValueSelector identifies which Value is being changed
     /*
         sally = 1
@@ -87,6 +89,14 @@ public class MatchScoutStronghold extends AppCompatActivity {
 
     EditText TeamNum;
 
+    String filename = "matchscout.txt";
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +137,8 @@ public class MatchScoutStronghold extends AppCompatActivity {
 
 
         TeamNum = (EditText) findViewById(R.id.edtTeam);
+
+        //file = StartScreen.strong_match_file;
     }
 
 
@@ -317,45 +329,57 @@ public class MatchScoutStronghold extends AppCompatActivity {
 
         if (TeamNumSt != null) {
 
-            String filename = "matchscout"+ TeamNumSt + ".txt";
-            //OutputStreamWriter outputStream;
-
-            //File file = getStorageDir(filename);
             File root = android.os.Environment.getExternalStorageDirectory();
-            //tv.append("\nExternal file system root: "+root);
 
-            // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
+            //creating file to save data to
+            File dir = new File (root.getAbsolutePath() + "/Download/" + filename);
 
-            File dir = new File (root.getAbsolutePath() + "/download");
-            dir.mkdirs();
-            File file = new File(dir, filename);
+            if (dir.exists()) {
+                try {
+                    FileOutputStream f = new FileOutputStream(dir, true);
+                    OutputStreamWriter osw = new OutputStreamWriter(f);
+                    osw.write("\n" + output);
+                    osw.flush();
+                    osw.close();
+                    /*
+                    //PrintWriter pw = ;
+                    pw.println();
+                    pw.println(output);
+                    pw.flush();
+                    pw.close();
+                    f.close();*/
+                    System.out.println(dir.getAbsolutePath());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Log.i("FILENOTFOUND", "******* File not found");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
 
-            try {
-                FileOutputStream f = new FileOutputStream(file);
-                PrintWriter pw = new PrintWriter(f);
-                pw.println(output);
-                pw.flush();
-                pw.close();
-                f.close();
-                System.out.println(file.getAbsolutePath());
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                Log.i("FILENOTFOUND", "******* File not found");
-            } catch (IOException e) {
-                e.printStackTrace();
+
+                //File file = new File(dir, filename);
+
+                try {
+                    dir.createNewFile();
+                    FileOutputStream f = new FileOutputStream(dir);
+                    PrintWriter pw = new PrintWriter(f);
+                    pw.println(output);
+                    pw.flush();
+                    pw.close();
+                    f.close();
+                    System.out.println(dir.getAbsolutePath());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Log.i("FILENOTFOUND", "******* File not found");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-           // tv.append("\n\nFile written to "+file);
-/*
-            try {
-                outputStream = new OutputStreamWriter(openFileOutput(filename, Context.MODE_WORLD_READABLE));
-                outputStream.write(output);
-                System.out.println(getFileStreamPath(filename));
-                outputStream.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }*/
+
 
             Intent i = new Intent(MatchScoutStronghold.this, MatchConfirmation.class);
+            matchCount++;
             startActivity(i);
 
         } else {
@@ -389,13 +413,3 @@ public class MatchScoutStronghold extends AppCompatActivity {
 
 
 }
-//floating action button
-/*
-<android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
- */

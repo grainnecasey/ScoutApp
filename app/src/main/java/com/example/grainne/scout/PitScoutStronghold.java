@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 public class PitScoutStronghold extends AppCompatActivity {
@@ -99,17 +100,17 @@ public class PitScoutStronghold extends AppCompatActivity {
 
     public void submitOnClick(View v) {
 
-        chevalbool = chevalSw.isChecked();
-        rockWallBool = rockWallSw.isChecked();
-        roughTerrainBool = roughTerrainSw.isChecked();
-        moatBool = moatSw.isChecked();
-        rampartsBool = rampartsSw.isChecked();
-        sallyPortBool = sallyPortSw.isChecked();
-        drawBridgeBool = drawBridgeSw.isChecked();
-        lowBarBool = lowBarSw.isChecked();
-        highBoalBool = highGoalSw.isChecked();
-        lowGoalBool = lowGoalSw.isChecked();
-        portBool = portSw.isChecked();
+        chevalbool = chevalSw.isActivated();
+        rockWallBool = rockWallSw.isActivated();
+        roughTerrainBool = roughTerrainSw.isActivated();
+        moatBool = moatSw.isActivated();
+        rampartsBool = rampartsSw.isActivated();
+        sallyPortBool = sallyPortSw.isActivated();
+        drawBridgeBool = drawBridgeSw.isActivated();
+        lowBarBool = lowBarSw.isActivated();
+        highBoalBool = highGoalSw.isActivated();
+        lowGoalBool = lowGoalSw.isActivated();
+        portBool = portSw.isActivated();
 
         teamNumSt = teamNum.getText().toString();
         autoComSt = autoComments.getText().toString();
@@ -124,35 +125,58 @@ public class PitScoutStronghold extends AppCompatActivity {
 
         if (teamNumSt != null) {
 
-            String filename = "pitscout"+ teamNumSt + ".txt";
-            //OutputStreamWriter outputStream;
+            String filename = "pitscout" + ".txt";
 
-            //File file = getStorageDir(filename);
             File root = android.os.Environment.getExternalStorageDirectory();
-            //tv.append("\nExternal file system root: "+root);
 
-            // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
+            //creating file to save data to
+            File dir = new File (root.getAbsolutePath() + "/download/" + filename);
 
-            File dir = new File (root.getAbsolutePath() + "/download");
-            dir.mkdirs();
-            File file = new File(dir, filename);
+            if (dir.exists()) {
+                try {
+                    FileOutputStream f = new FileOutputStream(dir, true); //true = append mode
+                    OutputStreamWriter osw = new OutputStreamWriter(f);
+                    osw.write("\n" + output);
+                    osw.flush();
+                    osw.close();
+                    /*
+                    //PrintWriter pw = ;
+                    pw.println();
+                    pw.println(output);
+                    pw.flush();
+                    pw.close();
+                    f.close();*/
+                    System.out.println(dir.getAbsolutePath());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Log.i("FILENOTFOUND", "******* File not found");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
 
-            try {
-                FileOutputStream f = new FileOutputStream(file);
-                PrintWriter pw = new PrintWriter(f);
-                pw.println(output);
-                pw.flush();
-                pw.close();
-                f.close();
-                System.out.println(file.getAbsolutePath());
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                Log.i("FILENOTFOUND", "******* File not found");
-            } catch (IOException e) {
-                e.printStackTrace();
+
+                //File file = new File(dir, filename);
+
+                try {
+                    dir.createNewFile();
+                    FileOutputStream f = new FileOutputStream(dir);
+                    PrintWriter pw = new PrintWriter(f);
+                    pw.println(output);
+                    pw.flush();
+                    pw.close();
+                    f.close();
+                    System.out.println(dir.getAbsolutePath());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Log.i("FILENOTFOUND", "******* File not found");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
-            Intent i = new Intent(PitScoutStronghold.this, MatchConfirmation.class);
+            //launching confirmation page
+            Intent i = new Intent(PitScoutStronghold.this, PitConfirmation.class);
             startActivity(i);
 
         } else {

@@ -2,33 +2,33 @@ package com.example.grainne.scout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.File;
+
 public class StartScreen extends AppCompatActivity {
+
+    public static File strong_match_root;
+    public static File strong_match_dir;
+    public static File strong_match_file;
+
+    boolean filesCreated = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+        if (strong_match_file == null) {
+            createFiles();
+        }
+
     }
 
     @Override
@@ -57,6 +57,19 @@ public class StartScreen extends AppCompatActivity {
         Intent i = new Intent(StartScreen.this, StrongholdMenu.class);
         startActivity(i);
 
+
+
+    }
+
+    public void createFiles() {
+
+        strong_match_root = android.os.Environment.getExternalStorageDirectory();
+        // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
+        strong_match_dir = new File (strong_match_root.getAbsolutePath() + "/download");
+        strong_match_dir.mkdirs();
+        strong_match_file = new File(strong_match_dir, "matchscout.txt");
+
+        filesCreated = true;
 
 
     }
