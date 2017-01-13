@@ -26,7 +26,9 @@
         android:layout_height="match_parent">
 
         <include layout="@layout/content_steamworks_additional_notes"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <EditText
             android:inputType="textPersonName"
@@ -36,7 +38,6 @@
             android:layout_below="@+id/txtPromptAdditionalNotes"
             android:layout_centerHorizontal="true"
             android:layout_width="350dp"
-            android:textAlignment="viewStart"
             android:autoText="false"
             android:gravity="top|center_vertical"
             android:hint="Enter Additional Notes"

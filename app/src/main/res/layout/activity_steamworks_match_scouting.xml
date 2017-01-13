@@ -27,9 +27,8 @@
 
         <include layout="@layout/content_steamworks_match_scouting"
             android:layout_weight="1"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <EditText
             android:inputType="textPersonName"
