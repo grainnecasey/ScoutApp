@@ -26,7 +26,266 @@
         android:layout_height="match_parent">
 
         <include layout="@layout/content_steamworks_match_scouting"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/ckbGearPlaced"
+            android:layout_alignLeft="@+id/ckbGearPlaced"
+            android:layout_alignStart="@+id/ckbGearPlaced"
+            android:id="@+id/edtHighGoal"
+            android:layout_width="120dp"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="High Goal Made" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtLowGoal"
+            android:layout_width="120dp"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Low Goal Made"
+            android:layout_below="@+id/ckbBaseline"
+            android:layout_alignLeft="@+id/ckbBaseline"
+            android:layout_alignStart="@+id/ckbBaseline" />
+
+        <CheckBox
+            android:text="High Goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbHighGoal"
+            android:layout_below="@+id/txtPromptTeleop"
+            android:layout_alignLeft="@+id/edtHighGoal"
+            android:layout_alignStart="@+id/edtHighGoal" />
+
+        <CheckBox
+            android:text="Low Goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbLowGoal"
+            android:layout_below="@+id/txtPromptTeleop"
+            android:layout_alignLeft="@+id/edtLowGoal"
+            android:layout_alignStart="@+id/edtLowGoal" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtCycleTime"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Cycle Time"
+            android:layout_width="185dp"
+            android:layout_below="@+id/edtSpeed"
+            android:layout_alignLeft="@+id/edtSpeed"
+            android:layout_alignStart="@+id/edtSpeed" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtTimeToClear"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Time to Clear Out Balls"
+            android:layout_width="185dp"
+            android:layout_below="@+id/edtCycleTime"
+            android:layout_alignLeft="@+id/edtCycleTime"
+            android:layout_alignStart="@+id/edtCycleTime" />
+
+        <TextView
+            android:text="Match Scouting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:id="@+id/textView9"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/white"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <CheckBox
+            android:text="Climb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbClimb"
+            android:layout_below="@+id/txtPromptEndGame"
+            android:layout_alignLeft="@+id/edtGearsPlaced"
+            android:layout_alignStart="@+id/edtGearsPlaced"
+            android:layout_marginTop="11dp" />
+
+        <TextView
+            android:text="Auto"
+            android:layout_marginTop="22dp"
+            android:id="@+id/txtPromptAuto"
+            android:textSize="24sp"
+            android:layout_height="30dp"
+            android:textColor="@android:color/black"
+            android:layout_width="70dp"
+            android:textAlignment="center"
+            android:layout_below="@+id/textView9"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="Teleop"
+            android:id="@+id/txtPromptTeleop"
+            android:textSize="24sp"
+            android:layout_height="30dp"
+            android:layout_width="80dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/edtHighGoal"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:text="End Game"
+            android:id="@+id/txtPromptEndGame"
+            android:textSize="24sp"
+            android:layout_height="30dp"
+            android:textColor="@android:color/black"
+            android:layout_width="120dp"
+            android:layout_below="@+id/edtTimeToClear"
+            android:layout_alignLeft="@+id/ckbClimb"
+            android:layout_alignStart="@+id/ckbClimb" />
+
+        <CheckBox
+            android:text="Baseline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbBaseline"
+            android:layout_below="@+id/txtPromptAuto"
+            android:layout_toRightOf="@+id/edtGearsPlaced"
+            android:layout_toEndOf="@+id/edtGearsPlaced"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtQuality"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Quality (1-10)"
+            android:layout_width="100dp"
+            android:layout_alignTop="@+id/ckbClimb"
+            android:layout_alignLeft="@+id/ckbHighIntake"
+            android:layout_alignStart="@+id/ckbHighIntake" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:id="@+id/textView16"
+            android:layout_below="@+id/edtStrategic"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/black"
+            android:background="@android:color/black" />
+
+        <CheckBox
+            android:text="Gear Placed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbGearPlaced"
+            android:layout_below="@+id/txtPromptAuto"
+            android:layout_toLeftOf="@+id/edtGearsPlaced"
+            android:layout_toStartOf="@+id/edtGearsPlaced" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtStrategic"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Strategic?"
+            android:layout_width="100dp"
+            android:layout_alignTop="@+id/ckbClimb"
+            android:layout_alignRight="@+id/ckbHighGoal"
+            android:layout_alignEnd="@+id/ckbHighGoal" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtTeamNum"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Team #"
+            android:layout_width="100dp"
+            android:textStyle="normal|bold"
+            android:layout_alignBottom="@+id/btnSubmit"
+            android:layout_alignLeft="@+id/edtStrategic"
+            android:layout_alignStart="@+id/edtStrategic" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtName"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Name"
+            android:textStyle="normal|bold"
+            android:layout_width="150dp"
+            android:layout_alignBottom="@+id/btnSubmit"
+            android:layout_alignRight="@+id/ckbHighIntake"
+            android:layout_alignEnd="@+id/ckbHighIntake" />
+
+        <Button
+            android:text="Submit"
+            android:id="@+id/btnSubmit"
+            android:background="@android:color/holo_green_dark"
+            android:textStyle="normal|bold"
+            android:textSize="14sp"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/edtHighGoal"
+            android:layout_toEndOf="@+id/edtHighGoal" />
+
+        <CheckBox
+            android:text="High Intake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbHighIntake"
+            android:layout_below="@+id/ckbLowGoal"
+            android:layout_alignLeft="@+id/ckbLowGoal"
+            android:layout_alignStart="@+id/ckbLowGoal" />
+
+        <CheckBox
+            android:text="Low Intake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbLowIntake"
+            android:layout_below="@+id/ckbHighGoal"
+            android:layout_alignLeft="@+id/ckbHighGoal"
+            android:layout_alignStart="@+id/ckbHighGoal" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtSpeed"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Speed (Fast, Average, Slow)"
+            android:layout_width="185dp"
+            android:layout_below="@+id/ckbHighIntake"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtGearsPlaced"
+            android:layout_width="120dp"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Gears Placed"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

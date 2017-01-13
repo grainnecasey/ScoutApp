@@ -28,6 +28,51 @@
         <include layout="@layout/content_steamworks_confirmation_page"
             android:layout_weight="1" />
 
+        <TextView
+            android:text="Pit Scouting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/textView11"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="Your Response has been Recorded!!"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:id="@+id/txtPromptResponseRecorded"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_below="@+id/textView11"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:text="Game Menu"
+            android:layout_height="100dp"
+            android:layout_marginTop="53dp"
+            android:id="@+id/btnGameMenu"
+            android:layout_width="200dp"
+            android:textSize="30sp"
+            android:layout_below="@+id/txtPromptResponseRecorded"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:text="Main Menu"
+            android:layout_height="100dp"
+            android:layout_marginTop="53dp"
+            android:id="@+id/btnMainMenu"
+            android:layout_width="200dp"
+            android:textSize="30sp"
+            android:layout_below="@+id/btnGameMenu"
+            android:layout_alignLeft="@+id/btnGameMenu"
+            android:layout_alignStart="@+id/btnGameMenu" />
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

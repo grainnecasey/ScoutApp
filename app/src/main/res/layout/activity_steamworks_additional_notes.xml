@@ -28,6 +28,79 @@
         <include layout="@layout/content_steamworks_additional_notes"
             android:layout_weight="1" />
 
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="18dp"
+            android:id="@+id/edtAdditionalNotes"
+            android:layout_below="@+id/txtPromptAdditionalNotes"
+            android:layout_centerHorizontal="true"
+            android:layout_width="350dp"
+            android:textAlignment="viewStart"
+            android:autoText="false"
+            android:gravity="top|center_vertical"
+            android:hint="Enter Additional Notes"
+            android:layout_height="250dp" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="16dp"
+            android:id="@+id/edtTeamNum"
+            android:layout_width="200dp"
+            android:layout_below="@+id/edtAdditionalNotes"
+            android:layout_alignLeft="@+id/edtAdditionalNotes"
+            android:layout_alignStart="@+id/edtAdditionalNotes"
+            android:hint="Enter Team Number" />
+
+        <Button
+            android:text="Submit"
+            android:layout_width="100dp"
+            android:id="@+id/btnSubmit"
+            android:background="@android:color/holo_green_dark"
+            android:textStyle="normal|bold"
+            android:textSize="18sp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="16dp"
+            android:id="@+id/edtName"
+            android:hint="Enter Your Name"
+            android:layout_below="@+id/edtTeamNum"
+            android:layout_alignLeft="@+id/edtTeamNum"
+            android:layout_alignStart="@+id/edtTeamNum" />
+
+        <TextView
+            android:text="Match Scouting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:id="@+id/textView14"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="Additional Notes?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:id="@+id/txtPromptAdditionalNotes"
+            android:textSize="36sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/textView14"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

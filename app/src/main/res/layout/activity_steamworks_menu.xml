@@ -31,20 +31,21 @@
         <TextView
             android:text="Pit or Match Scouting"
             android:layout_height="wrap_content"
-            android:id="@+id/textView13"
+            android:id="@+id/txtPitOrMatch"
             android:textSize="50dp"
             android:textAlignment="center"
             android:layout_marginTop="71dp"
             android:layout_width="300dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black" />
 
         <Button
             android:text="Match Scouting"
             android:id="@+id/btnMatchScouting"
             android:layout_marginTop="56dp"
-            android:layout_below="@+id/textView13"
+            android:layout_below="@+id/txtPitOrMatch"
             android:layout_centerHorizontal="true"
             android:textSize="30sp"
             android:layout_width="200dp"
@@ -60,6 +61,18 @@
             android:layout_below="@+id/btnMatchScouting"
             android:layout_alignLeft="@+id/btnMatchScouting"
             android:layout_alignStart="@+id/btnMatchScouting" />
+
+        <TextView
+            android:text="Steamworks Menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/textView15"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
