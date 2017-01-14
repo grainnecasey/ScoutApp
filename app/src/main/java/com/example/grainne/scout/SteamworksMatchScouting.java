@@ -36,8 +36,6 @@ public class SteamworksMatchScouting extends AppCompatActivity {
     String CycleTimeSt;
     String TimeToClearSt;
     String GearsPlacedSt;
-    String StrategicSt;
-    String QualitySt;
     String NameSt;
     String AutoHopperSt;
     String TeleopHopperSt;
@@ -90,8 +88,6 @@ public class SteamworksMatchScouting extends AppCompatActivity {
         CycleTime = (EditText) findViewById(R.id.edtTeleopHopper);
         TimeToClear = (EditText) findViewById(R.id.edtTimeToClear);
         GearsPlacedEdt = (EditText) findViewById(R.id.edtGearsPlaced);
-        Strategic = (EditText) findViewById(R.id.edtStrategic);
-        Quality = (EditText) findViewById(R.id.edtQuality);
         AutoHopper = (EditText) findViewById(R.id.edtAutoHopper);
         TeleopHopper = (EditText) findViewById(R.id.edtTeleopHopper);
 
@@ -121,12 +117,14 @@ public class SteamworksMatchScouting extends AppCompatActivity {
         CycleTimeSt = CycleTime.getText().toString();
         TimeToClearSt = TimeToClear.getText().toString();
         GearsPlacedSt = GearsPlacedEdt.getText().toString();
-        StrategicSt = Strategic.getText().toString();
-        QualitySt = Quality.getText().toString();
         AutoHopperSt = AutoHopper.getText().toString();
         TeleopHopperSt = TeleopHopper.getText().toString();
 
-       GearPlacedBool = GearPlacedCkb.isChecked();
+        if(GearPlacedCkb.isChecked()){
+            GearPlacedBool = true;
+        }else{
+            GearPlacedBool = false;
+        }
         BaselineBool = BaseLine.isChecked();
         HighGoalBool = HighGoalCkb.isChecked();
         LowGoalBool = LowGoalCkb.isChecked();
@@ -134,10 +132,9 @@ public class SteamworksMatchScouting extends AppCompatActivity {
         HighIntakeBool = HighIntake.isChecked();
         ClimbBool = Climb.isChecked();
 
-        String output = TeamNumSt + "}" + GearPlacedBool + "}" + WhichGearStationSt + " " + "}" + BaselineBool + "}" +
-                LowGoalMadeSt + " " + "}" + HighGoalMadeSt + " " + "}" + AutoHopperSt + " " + "}" + LowGoalBool + "}" + HighGoalBool
-                + "}" + GearsPlacedSt + " " + "}" + CycleTimeSt + " " + "}" + TimeToClearSt + " " + "}" + ClimbBool + "}" + QualitySt
-                + " "+ "}" + StrategicSt + " }";
+        String output = TeamNumSt + "}" + GearPlacedBool + "}" + WhichGearStationSt + "}" + BaselineBool + "}" +
+                LowGoalMadeSt + "}" + HighGoalMadeSt + "}" + AutoHopperSt + "}" + LowGoalBool + "}" + HighGoalBool
+                + "}" + GearsPlacedSt + "}" + CycleTimeSt + "}" + TimeToClearSt + "}" + ClimbBool + "}";
 
 
         //save data as output
@@ -152,7 +149,7 @@ public class SteamworksMatchScouting extends AppCompatActivity {
                 try {
                     FileOutputStream f = new FileOutputStream(dir, true); //true = append mode
                     OutputStreamWriter osw = new OutputStreamWriter(f);
-                    osw.write(output);
+                    osw.write("\n" + output);
                     osw.flush();
                     osw.close();
 

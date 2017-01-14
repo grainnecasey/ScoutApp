@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import java.io.File;
@@ -26,10 +27,20 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
     EditText AdditionalNotes;
     EditText TeamNumber;
     EditText ScouterName;
+    EditText Strategy;
+    EditText Quality;
+    EditText Driveteam;
 
     String AdditionalNotesSt;
     String TeamNumSt;
     String ScouterNameSt;
+    String StrategySt;
+    String QualitySt;
+    String DriveteamSt;
+
+    CheckBox Survive;
+
+    Boolean SurviveBool;
 
     String filename;
     String output;
@@ -44,6 +55,11 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
         AdditionalNotes = (EditText) findViewById(R.id.edtAdditionalNotes);
         TeamNumber = (EditText) findViewById(R.id.edtTeamNum);
         ScouterName = (EditText) findViewById(R.id.edtName);
+        Strategy = (EditText) findViewById(R.id.edtStrategic);
+        Quality = (EditText) findViewById(R.id.edtQuality);
+        Driveteam = (EditText) findViewById(R.id.edtDriveteam);
+
+        Survive = (CheckBox) findViewById(R.id.ckbSurvive);
 
         Submit = (Button) findViewById(R.id.btnSubmit);
 
@@ -60,8 +76,13 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
         AdditionalNotesSt = AdditionalNotes.getText().toString();
         TeamNumSt = TeamNumber.getText().toString();
         ScouterNameSt = ScouterName.getText().toString();
+        StrategySt = Strategy.getText().toString();
+        QualitySt = Quality.getText().toString();
+        DriveteamSt = Driveteam.getText().toString();
 
-        output = AdditionalNotesSt + "}" + TeamNumSt + "}" + ScouterNameSt + "}" + "\n";
+        SurviveBool = Survive.isChecked();
+
+        output = SurviveBool + " }" + QualitySt + " }" + ScouterNameSt + " }" + StrategySt + " }" + DriveteamSt + " }" + AdditionalNotesSt + " }"+ "\n";
 
         //creating file to save data to
         File dir = new File (root.getAbsolutePath() + "/download/" + filename);

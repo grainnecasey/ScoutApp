@@ -30,18 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-        <EditText
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:layout_marginTop="16dp"
-            android:id="@+id/edtTeamNum"
-            android:layout_width="200dp"
-            android:layout_below="@+id/edtAdditionalNotes"
-            android:layout_alignLeft="@+id/edtAdditionalNotes"
-            android:layout_alignStart="@+id/edtAdditionalNotes"
-            android:hint="Enter Team Number" />
-
         <Button
             android:text="Submit"
             android:layout_width="100dp"
@@ -54,18 +42,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="12dp"
             android:onClick="submitAdditionalNotesOnClick"/>
-
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:layout_marginTop="16dp"
-            android:id="@+id/edtName"
-            android:hint="Enter Your Name"
-            android:layout_below="@+id/edtTeamNum"
-            android:layout_alignLeft="@+id/edtTeamNum"
-            android:layout_alignStart="@+id/edtTeamNum" />
 
         <TextView
             android:text="Match Scouting"
@@ -93,14 +69,62 @@
         <EditText
             android:inputType="textPersonName"
             android:ems="10"
-            android:layout_marginTop="18dp"
+            android:id="@+id/edtStrategic"
+            android:textSize="18sp"
+            android:hint="Strategic?"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/txtPromptAdditionalNotes"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_height="40dp" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtQuality"
+            android:textSize="18sp"
+            android:hint="Quality"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/edtStrategic"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtDriveteam"
+            android:textSize="18sp"
+            android:hint="Driveteam"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/edtQuality"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="13dp" />
+
+        <CheckBox
+            android:text="Survive Match"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbSurvive"
+            android:textSize="18sp"
+            android:layout_width="150dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
             android:id="@+id/edtAdditionalNotes"
             android:autoText="false"
             android:gravity="top|center_vertical"
-            android:hint="Enter Additional Notes (Driveteam/Survival)"
-            android:layout_height="250dp"
+            android:hint="Enter Additional Notes"
             android:layout_width="355dp"
-            android:layout_below="@+id/txtPromptAdditionalNotes"
+            android:layout_height="200dp"
+            android:singleLine="false"
+            android:layout_above="@+id/btnSubmit"
             android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
