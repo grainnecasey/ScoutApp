@@ -126,7 +126,11 @@ public class SteamworksMatchScouting extends AppCompatActivity {
         AutoHopperSt = AutoHopper.getText().toString();
         TeleopHopperSt = TeleopHopper.getText().toString();
 
-        GearPlacedBool = GearPlacedCkb.isChecked();
+        if(GearPlacedCkb.isChecked()){
+            GearPlacedBool = true;
+        }else{
+            GearPlacedBool = false;
+        }
         BaselineBool = BaseLine.isChecked();
         HighGoalBool = HighGoalCkb.isChecked();
         LowGoalBool = LowGoalCkb.isChecked();
