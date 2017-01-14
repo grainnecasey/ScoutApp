@@ -354,7 +354,8 @@
             android:layout_below="@+id/whereInField"
             android:layout_alignLeft="@+id/idealAlliance"
             android:layout_alignStart="@+id/idealAlliance"
-            android:layout_above="@+id/submitBut" />
+            android:layout_above="@+id/submitBut"
+            android:onClick="submitPitSteamOnClick"/>
 
         <EditText
             android:layout_width="wrap_content"
