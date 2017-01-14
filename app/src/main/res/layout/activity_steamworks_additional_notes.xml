@@ -31,19 +31,6 @@
             android:layout_height="match_parent"/>
 
         <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:layout_marginTop="18dp"
-            android:id="@+id/edtAdditionalNotes"
-            android:layout_below="@+id/txtPromptAdditionalNotes"
-            android:layout_centerHorizontal="true"
-            android:layout_width="350dp"
-            android:autoText="false"
-            android:gravity="top|center_vertical"
-            android:hint="Enter Additional Notes"
-            android:layout_height="250dp" />
-
-        <EditText
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -101,6 +88,19 @@
             android:textSize="36sp"
             android:textColor="@android:color/black"
             android:layout_below="@+id/textView14"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="18dp"
+            android:id="@+id/edtAdditionalNotes"
+            android:autoText="false"
+            android:gravity="top|center_vertical"
+            android:hint="Enter Additional Notes (Driveteam/Survival)"
+            android:layout_height="250dp"
+            android:layout_width="355dp"
+            android:layout_below="@+id/txtPromptAdditionalNotes"
             android:layout_centerHorizontal="true" />
 
     </RelativeLayout>

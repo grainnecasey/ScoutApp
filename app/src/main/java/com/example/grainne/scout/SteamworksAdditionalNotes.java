@@ -1,6 +1,7 @@
 package com.example.grainne.scout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -101,6 +102,8 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+            Intent i = new Intent(SteamworksAdditionalNotes.this, SteamworksMenu.class);
+            startActivity(i);
         }else{
             android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
             teamnumerror.setMessage("You must enter a team number and your name before submitting").setTitle("Error");
