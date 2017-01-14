@@ -101,11 +101,6 @@
             android:layout_toRightOf="@+id/gearCheck"
             android:layout_toEndOf="@+id/gearCheck" />
 
-        <include layout="@layout/content_steamworks_pit_scouting"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/teleGearCheck"
-            android:layout_toEndOf="@+id/teleGearCheck" />
-
         <CheckBox
             android:text="Shoot High?"
             android:layout_width="wrap_content"
@@ -128,15 +123,15 @@
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/autoHighShootCheck"
             android:textAlignment="textStart"
-            android:layout_alignLeft="@+id/autoLowShoot"
-            android:layout_alignStart="@+id/autoLowShoot" />
+            android:layout_alignLeft="@+id/autoLowShootCheck\"
+            android:layout_alignStart="@+id/autoLowShootCheck\" />
 
         <CheckBox
             android:text="Shoot Low?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/startplaceCheck"
-            android:id="@+id/autoLowShoot"
+            android:id="@+id/autoLowShootCheck"
             android:textSize="18sp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -169,8 +164,8 @@
             android:layout_marginTop="9dp"
             android:id="@+id/robotSpeedNum"
             android:hint="How fast robot crosses field (sec)"
-            android:layout_toStartOf="@+id/teleShootLowCheck"
-            android:layout_toLeftOf="@+id/teleShootLowCheck" />
+            android:layout_toStartOf="@+id/autoLowShootCheck\"
+            android:layout_toLeftOf="@+id/autoLowShootCheck\" />
 
         <CheckBox
             android:text="Activates Hopper?"
@@ -228,14 +223,13 @@
             android:text="Can climb?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/endgameTitle"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="23dp"
             android:layout_marginStart="23dp"
-            android:layout_marginTop="26dp"
             android:id="@+id/climbCheck"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_below="@+id/endgameTitle" />
 
         <TextView
             android:text="Teleop"
@@ -262,6 +256,84 @@
             android:layout_toRightOf="@+id/autoHopperCheck"
             android:layout_toEndOf="@+id/autoHopperCheck" />
 
+        <TextView
+            android:text="Notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/notesTitle"
+            android:textStyle="normal|bold"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="45dp"
+            android:layout_below="@+id/climbCheck"
+            android:layout_alignLeft="@+id/endgameTitle"
+            android:layout_alignStart="@+id/endgameTitle" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/endgameStrat"
+            android:layout_below="@+id/climbCheck"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="       Other Endgame Strategy?"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/notesTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/basicStrat"
+            android:hint="Basic Strategy"
+            android:layout_toStartOf="@+id/autoLowShootCheck\"
+            android:layout_alignRight="@+id/shootaccuracyNum"
+            android:layout_alignEnd="@+id/shootaccuracyNum" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_below="@+id/basicStrat"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/ballCapacNum"
+            android:hint="Ball Capacity? (general #)" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_alignTop="@+id/basicStrat"
+            android:layout_alignRight="@+id/climbSpeedNum"
+            android:layout_alignEnd="@+id/climbSpeedNum"
+            android:layout_marginRight="23dp"
+            android:layout_marginEnd="23dp"
+            android:id="@+id/idealAlliance"
+            android:hint="Ideal Alliance/Role in that"
+            android:layout_alignBottom="@+id/ballCapacNum" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/ballCapacNum"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/whereInField"
+            android:hint="Where in field do you go during cycle?"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
         <Button
             android:text="Submit"
             android:layout_width="wrap_content"
@@ -271,8 +343,61 @@
             android:textColor="@android:color/background_light"
             android:backgroundTint="@color/colorPrimary"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="83dp" />
+            android:layout_toRightOf="@+id/scoutName"
+            android:layout_toEndOf="@+id/scoutName" />
+
+        <include layout="@layout/content_steamworks_pit_scouting"
+            android:layout_alignTop="@+id/title"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/exNotes"
+            android:hint="Additional things?"
+            android:layout_below="@+id/whereInField"
+            android:layout_alignLeft="@+id/idealAlliance"
+            android:layout_alignStart="@+id/idealAlliance"
+            android:layout_above="@+id/submitBut" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/teamNum"
+            android:hint="Team Number "
+            android:layout_below="@+id/scoutName"
+            android:layout_alignLeft="@+id/scoutName"
+            android:layout_alignStart="@+id/scoutName" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/scoutName"
+            android:hint="Scouter Name"
+            android:textColor="?attr/colorPrimary"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_alignBaseline="@+id/exNotes"
+            android:layout_alignBottom="@+id/exNotes"
+            android:layout_alignLeft="@+id/climbCheck"
+            android:layout_alignStart="@+id/climbCheck" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_above="@+id/scoutName"
+            android:layout_alignRight="@+id/scoutName"
+            android:layout_alignEnd="@+id/scoutName"
+            android:id="@+id/intakeTypeBox"
+            android:hint="Intake type? (top/floor)" />
 
     </RelativeLayout>
 
