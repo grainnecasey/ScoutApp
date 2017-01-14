@@ -12,20 +12,268 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/content_steamworks_pit_scouting" />
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:id="@+id/title"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            tools:text="Pit Scouting"
+            android:textSize="36sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:id="@+id/autoTitle"
+            android:textStyle="normal|bold"
+            tools:text="Auto"
+            android:textSize="30sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textAlignment="center"
+            android:layout_toLeftOf="@+id/title"
+            android:layout_toStartOf="@+id/title"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/autoTitle"
+            android:id="@+id/autoNotes"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="Enter general notes about their auto period"
+            android:textSize="24sp"
+            android:layout_height="75px" />
+
+        <CheckBox
+            android:text="Gear?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gearCheck"
+            android:layout_below="@+id/autoNotes"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="18sp"
+            android:layout_toLeftOf="@+id/autoHighShootCheck"
+            android:layout_toStartOf="@+id/autoHighShootCheck"
+            android:textAlignment="textStart" />
+
+        <CheckBox
+            android:text="Gear?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teleopTitle"
+            android:layout_marginTop="15dp"
+            android:id="@+id/teleGearCheck"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/teleShootLowCheck"
+            android:textSize="18sp"
+            android:layout_toLeftOf="@+id/teleShootLowCheck"
+            android:textAlignment="textStart" />
+
+        <CheckBox
+            android:text="Shoot Low?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teleShootLowCheck"
+            android:layout_alignBaseline="@+id/highshootCheck"
+            android:layout_alignBottom="@+id/highshootCheck"
+            android:textSize="18sp"
+            android:textAlignment="textStart"
+            android:layout_toLeftOf="@+id/highshootCheck"
+            android:layout_toRightOf="@+id/gearCheck"
+            android:layout_toEndOf="@+id/gearCheck" />
+
+        <include layout="@layout/content_steamworks_pit_scouting"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/teleGearCheck"
+            android:layout_toEndOf="@+id/teleGearCheck" />
+
+        <CheckBox
+            android:text="Shoot High?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/autoHighShootCheck"
+            android:layout_toRightOf="@+id/autoTitle"
+            android:layout_below="@+id/autoNotes"
+            android:textSize="18sp"
+            android:textAlignment="textStart" />
+
+        <CheckBox
+            android:text="Specific start place?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/startplaceCheck"
+            android:layout_alignBaseline="@+id/autoHopperCheck"
+            android:layout_alignBottom="@+id/autoHopperCheck"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/autoHighShootCheck"
+            android:textAlignment="textStart"
+            android:layout_alignLeft="@+id/autoLowShoot"
+            android:layout_alignStart="@+id/autoLowShoot" />
+
+        <CheckBox
+            android:text="Shoot Low?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/startplaceCheck"
+            android:id="@+id/autoLowShoot"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/highshootCheck"
+            android:layout_alignStart="@+id/highshootCheck"
+            android:textAlignment="textStart" />
+
+        <CheckBox
+            android:text="Shoot High?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/highshootCheck"
+            android:layout_alignBaseline="@+id/teleGearCheck"
+            android:layout_alignBottom="@+id/teleGearCheck"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="textStart"
+            android:layout_toRightOf="@+id/title"
+            android:layout_toEndOf="@+id/title" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_below="@+id/teleGearCheck"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="9dp"
+            android:id="@+id/robotSpeedNum"
+            android:hint="How fast robot crosses field (sec)"
+            android:layout_toStartOf="@+id/teleShootLowCheck"
+            android:layout_toLeftOf="@+id/teleShootLowCheck" />
+
+        <CheckBox
+            android:text="Activates Hopper?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/autoHopperCheck"
+            android:textSize="18sp"
+            android:layout_below="@+id/gearCheck"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/teleShootLowCheck"
+            android:layout_alignEnd="@+id/teleShootLowCheck"
+            android:textAlignment="textStart" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/shooterSpeedNum"
+            android:hint="Shooter speed - balls per second"
+            android:layout_alignBaseline="@+id/robotSpeedNum"
+            android:layout_alignBottom="@+id/robotSpeedNum"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/startplaceCheck"
+            android:layout_alignStart="@+id/startplaceCheck" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_below="@+id/robotSpeedNum"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/shootaccuracyNum"
+            android:hint="Shooter accuracy rating (1-10)"
+            android:layout_alignRight="@+id/robotSpeedNum"
+            android:layout_alignEnd="@+id/robotSpeedNum" />
+
+        <TextView
+            android:text="Endgame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shootaccuracyNum"
+            android:layout_alignLeft="@+id/teleopTitle"
+            android:layout_alignStart="@+id/teleopTitle"
+            android:id="@+id/endgameTitle"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:textColor="@color/colorPrimary" />
+
+        <CheckBox
+            android:text="Can climb?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/endgameTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="26dp"
+            android:id="@+id/climbCheck"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="Teleop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teleopTitle"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@+id/autoHopperCheck"
+            android:layout_alignRight="@+id/climbCheck"
+            android:layout_alignEnd="@+id/climbCheck"
+            android:layout_marginTop="22dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/climbSpeedNum"
+            android:hint="Climb Speed (sec)"
+            android:layout_alignBottom="@+id/climbCheck"
+            android:layout_toRightOf="@+id/autoHopperCheck"
+            android:layout_toEndOf="@+id/autoHopperCheck" />
+
+        <Button
+            android:text="Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitBut"
+            android:textSize="24sp"
+            android:textColor="@android:color/background_light"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="83dp" />
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -108,16 +108,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
-        <CheckBox
-            android:text="Climb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ckbClimb"
-            android:layout_below="@+id/txtPromptEndGame"
-            android:layout_alignLeft="@+id/edtGearsPlaced"
-            android:layout_alignStart="@+id/edtGearsPlaced"
-            android:layout_marginTop="11dp" />
-
         <TextView
             android:text="Auto"
             android:layout_marginTop="22dp"
@@ -193,44 +183,6 @@
             android:layout_toLeftOf="@+id/edtGearsPlaced"
             android:layout_toStartOf="@+id/edtGearsPlaced" />
 
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtStrategic"
-            android:textSize="14sp"
-            android:layout_height="35dp"
-            android:hint="Strategic?"
-            android:layout_width="100dp"
-            android:layout_alignTop="@+id/ckbClimb"
-            android:layout_alignRight="@+id/ckbHighGoal"
-            android:layout_alignEnd="@+id/ckbHighGoal" />
-
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtTeamNum"
-            android:textSize="14sp"
-            android:layout_height="35dp"
-            android:hint="Team #"
-            android:layout_width="100dp"
-            android:textStyle="normal|bold"
-            android:layout_alignBottom="@+id/btnSubmit"
-            android:layout_alignLeft="@+id/edtStrategic"
-            android:layout_alignStart="@+id/edtStrategic" />
-
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtName"
-            android:textSize="14sp"
-            android:layout_height="35dp"
-            android:hint="Name"
-            android:textStyle="normal|bold"
-            android:layout_width="150dp"
-            android:layout_alignBottom="@+id/btnSubmit"
-            android:layout_alignRight="@+id/ckbHighIntake"
-            android:layout_alignEnd="@+id/ckbHighIntake" />
-
         <Button
             android:text="Submit"
             android:id="@+id/btnSubmit"
@@ -277,13 +229,62 @@
         <EditText
             android:inputType="textPersonName"
             android:ems="10"
+            android:id="@+id/edtStrategic"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Strategic?"
+            android:layout_width="100dp"
+            android:layout_below="@+id/edtGearsPlaced"
+            android:layout_alignRight="@+id/ckbHighGoal"
+            android:layout_alignEnd="@+id/ckbHighGoal" />
+
+        <CheckBox
+            android:text="Climb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ckbClimb"
+            android:layout_above="@+id/textView16"
+            android:layout_alignLeft="@+id/edtGearsPlaced"
+            android:layout_alignStart="@+id/edtGearsPlaced" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
             android:id="@+id/edtGearsPlaced"
             android:layout_width="120dp"
             android:textSize="14sp"
             android:layout_height="35dp"
             android:hint="Gears Placed"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@+id/txtPromptEndGame"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtName"
+            android:textSize="18sp"
+            android:layout_height="35dp"
+            android:hint="Scouter Name"
+            android:textStyle="normal|bold"
+            android:layout_width="150dp"
+            android:layout_below="@+id/textView16"
+            android:layout_alignRight="@+id/edtLowGoal"
+            android:layout_alignEnd="@+id/edtLowGoal"
+            android:layout_marginTop="80dp" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtTeamNum"
+            android:textSize="18sp"
+            android:layout_height="35dp"
+            android:hint="Team #"
+            android:layout_width="100dp"
+            android:textStyle="normal|bold"
+            android:layout_toLeftOf="@+id/ckbClimb"
+            android:layout_toStartOf="@+id/ckbClimb"
+            android:layout_alignBottom="@+id/edtName" />
 
     </RelativeLayout>
 
