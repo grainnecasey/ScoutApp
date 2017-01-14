@@ -6,4 +6,9 @@
     <string name="title_activity_pit_confirmation">PitConfirmation</string>
     <string name="title_activity_stronghold_menu">StrongholdMenu</string>
     <string name="title_activity_match_confirmation">activity_match_confirmation</string>
+    <string name="title_activity_steamworks_menu">SteamworksMenu</string>
+    <string name="title_activity_steamworks_match_scouting">SteamworksMatchScouting</string>
+    <string name="title_activity_steamworks_pit_scouting">SteamworksPitScouting</string>
+    <string name="title_activity_steamworks_additional_notes">SteamworksAdditionalNotes</string>
+    <string name="title_activity_steamworks_confirmation_page">SteamworksConfirmationPage</string>
 </resources>

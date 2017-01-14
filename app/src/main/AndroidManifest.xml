@@ -40,6 +40,26 @@
         <activity
             android:name=".MatchConfirmation"
             android:label="@string/title_activity_match_confirmation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SteamworksMenu"
+            android:label="@string/title_activity_steamworks_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SteamworksMatchScouting"
+            android:label="@string/title_activity_steamworks_match_scouting"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SteamworksPitScouting"
+            android:label="@string/title_activity_steamworks_pit_scouting"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SteamworksAdditionalNotes"
+            android:label="@string/title_activity_steamworks_additional_notes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SteamworksConfirmationPage"
+            android:label="@string/title_activity_steamworks_confirmation_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

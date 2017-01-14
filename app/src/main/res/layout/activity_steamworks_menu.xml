@@ -49,7 +49,8 @@
             android:layout_centerHorizontal="true"
             android:textSize="30sp"
             android:layout_width="200dp"
-            android:layout_height="100dp" />
+            android:layout_height="100dp"
+            android:onClick="steamMatchScoutOnClick"/>
 
         <Button
             android:text="Pit Scouting"
@@ -60,7 +61,8 @@
             android:layout_height="100dp"
             android:layout_below="@+id/btnMatchScouting"
             android:layout_alignLeft="@+id/btnMatchScouting"
-            android:layout_alignStart="@+id/btnMatchScouting" />
+            android:layout_alignStart="@+id/btnMatchScouting"
+            android:onClick="steamPitScoutOnClick"/>
 
         <TextView
             android:text="Steamworks Menu"

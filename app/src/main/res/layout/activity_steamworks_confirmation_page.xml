@@ -63,7 +63,8 @@
             android:layout_width="200dp"
             android:textSize="30sp"
             android:layout_below="@+id/txtPromptResponseRecorded"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:onClick="steamMenOnClick"/>
 
         <Button
             android:text="Main Menu"
@@ -74,7 +75,8 @@
             android:textSize="30sp"
             android:layout_below="@+id/btnGameMenu"
             android:layout_alignLeft="@+id/btnGameMenu"
-            android:layout_alignStart="@+id/btnGameMenu" />
+            android:layout_alignStart="@+id/btnGameMenu"
+            android:onClick="mainMenOnClick"/>
 
     </RelativeLayout>
 
