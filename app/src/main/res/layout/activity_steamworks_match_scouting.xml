@@ -72,30 +72,6 @@
             android:layout_alignLeft="@+id/edtLowGoal"
             android:layout_alignStart="@+id/edtLowGoal" />
 
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtCycleTime"
-            android:textSize="14sp"
-            android:layout_height="35dp"
-            android:hint="Cycle Time"
-            android:layout_width="185dp"
-            android:layout_below="@+id/edtSpeed"
-            android:layout_alignLeft="@+id/edtSpeed"
-            android:layout_alignStart="@+id/edtSpeed" />
-
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtTimeToClear"
-            android:textSize="14sp"
-            android:layout_height="35dp"
-            android:hint="Time to Clear Out Balls"
-            android:layout_width="185dp"
-            android:layout_below="@+id/edtCycleTime"
-            android:layout_alignLeft="@+id/edtCycleTime"
-            android:layout_alignStart="@+id/edtCycleTime" />
-
         <TextView
             android:text="Match Scouting"
             android:layout_width="wrap_content"
@@ -119,16 +95,6 @@
             android:textAlignment="center"
             android:layout_below="@+id/textView9"
             android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:text="Teleop"
-            android:id="@+id/txtPromptTeleop"
-            android:textSize="24sp"
-            android:layout_height="30dp"
-            android:layout_width="80dp"
-            android:textColor="@android:color/black"
-            android:layout_below="@+id/edtHighGoal"
-            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:text="End Game"
@@ -194,7 +160,8 @@
             android:layout_marginBottom="15dp"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/edtHighGoal"
-            android:layout_toEndOf="@+id/edtHighGoal" />
+            android:layout_toEndOf="@+id/edtHighGoal"
+            android:onClick="submitMatchSteamOnClick"/>
 
         <CheckBox
             android:text="High Intake"
@@ -213,18 +180,6 @@
             android:layout_below="@+id/ckbHighGoal"
             android:layout_alignLeft="@+id/ckbHighGoal"
             android:layout_alignStart="@+id/ckbHighGoal" />
-
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtSpeed"
-            android:textSize="14sp"
-            android:layout_height="35dp"
-            android:hint="Speed (Fast, Average, Slow)"
-            android:layout_width="185dp"
-            android:layout_below="@+id/ckbHighIntake"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="37dp" />
 
         <EditText
             android:inputType="textPersonName"
@@ -285,6 +240,78 @@
             android:layout_toLeftOf="@+id/ckbClimb"
             android:layout_toStartOf="@+id/ckbClimb"
             android:layout_alignBottom="@+id/edtName" />
+
+        <TextView
+            android:text="Teleop"
+            android:id="@+id/txtPromptTeleop"
+            android:textSize="24sp"
+            android:layout_height="30dp"
+            android:layout_width="80dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/edtHighGoal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtStation"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Which Gear Station"
+            android:textAlignment="center"
+            android:layout_width="130dp"
+            android:layout_below="@+id/edtHighGoal"
+            android:layout_toLeftOf="@+id/txtPromptTeleop"
+            android:layout_toStartOf="@+id/txtPromptTeleop" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtAutoHopper"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Hopper"
+            android:textAlignment="center"
+            android:layout_width="60dp"
+            android:layout_below="@+id/edtLowGoal"
+            android:layout_alignLeft="@+id/edtLowGoal"
+            android:layout_alignStart="@+id/edtLowGoal" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtCycleTime"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Cycle Time"
+            android:layout_width="85dp"
+            android:layout_below="@+id/ckbLowIntake"
+            android:layout_alignLeft="@+id/edtTeamNum"
+            android:layout_alignStart="@+id/edtTeamNum" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtTimeToClear"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Time to Clear Out Balls"
+            android:layout_width="185dp"
+            android:layout_below="@+id/edtTeleopHopper"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtTeleopHopper"
+            android:textSize="14sp"
+            android:layout_height="35dp"
+            android:hint="Hopper"
+            android:layout_width="85dp"
+            android:layout_below="@+id/ckbHighIntake"
+            android:layout_alignRight="@+id/ckbLowGoal"
+            android:layout_alignEnd="@+id/ckbLowGoal" />
 
     </RelativeLayout>
 
