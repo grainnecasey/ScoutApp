@@ -1,6 +1,7 @@
 package com.example.grainne.scout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -189,6 +190,9 @@ public class SteamworksPitScouting extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+
+            Intent i = new Intent(SteamworksPitScouting.this, SteamworksConfirmationPage.class);
+            startActivity(i);
         }
     }
 

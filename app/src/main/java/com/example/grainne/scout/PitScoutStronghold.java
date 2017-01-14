@@ -98,7 +98,7 @@ public class PitScoutStronghold extends AppCompatActivity {
     }
 
 
-    public void submitOnClick(View v) {
+    public void submitPitSteamOnClick(View v) {
 
         chevalbool = chevalSw.isActivated();
         rockWallBool = rockWallSw.isActivated();
