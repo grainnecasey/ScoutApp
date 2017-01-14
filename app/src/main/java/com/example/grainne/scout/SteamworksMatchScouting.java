@@ -1,6 +1,7 @@
 package com.example.grainne.scout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -183,6 +184,8 @@ public class SteamworksMatchScouting extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+            Intent i = new Intent(SteamworksMatchScouting.this, SteamworksAdditionalNotes.class);
+            startActivity(i);
         }else{
             android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
             teamnumerror.setMessage("You must enter a team number and your name before submitting").setTitle("Error");
