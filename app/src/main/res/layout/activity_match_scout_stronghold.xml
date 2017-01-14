@@ -324,14 +324,14 @@
         android:layout_width="153dp"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:text="Enter Team #"
         android:ems="10"
         android:layout_marginTop="500dp"
         android:layout_marginLeft="10dp"
         android:textSize="24sp"
         android:selectAllOnFocus="false"
         android:singleLine="false"
-        android:id="@+id/edtTeam"
-        android:hint="Enter Team #" />
+        android:id="@+id/edtTeam" />
 
     <Button
         android:text="Low Bar"
@@ -345,7 +345,7 @@
     <Button
         android:text="Drawbridge"
         android:layout_width="139dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="270dp"
         android:id="@+id/btnDrawbridge"

@@ -104,7 +104,7 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
         }else{
             android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
             teamnumerror.setMessage("You must enter a team number and your name before submitting").setTitle("Error");
-            teamnumerror.setPositiveButton("Start Game",
+            teamnumerror.setPositiveButton("Edit Input",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             dialog.dismiss();

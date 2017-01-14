@@ -29,35 +29,6 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <TextView
-        android:text="Pit Scout Form"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:id="@+id/title"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        android:textColor="@android:color/background_light"
-        android:layout_marginTop="10dp" />
-
-    <EditText
-        android:layout_width="172dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Team Number"
-        android:ems="10"
-        android:id="@+id/teamNum"
-        android:layout_marginTop="55dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Scouter Name"
-        android:ems="10"
-        android:id="@+id/scouterName"
-        android:layout_marginTop="55dp"
-        android:layout_marginLeft="175dp" />
-
     <Switch
         android:text="Low Bar"
         android:layout_width="wrap_content"
@@ -150,6 +121,67 @@
         android:textStyle="normal|bold"
         android:textColor="@color/colorPrimaryDark" />
 
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitBut"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="150dp"
+        android:elevation="20dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:onClick="submitOnClick"/>
+
+    <EditText
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Team Number"
+        android:ems="10"
+        android:id="@+id/teamNum"
+        android:layout_marginTop="55dp" />
+
+    <TextView
+        android:text="Pit Scout Form"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:id="@+id/title"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textColor="@android:color/background_light"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Scouter Name"
+        android:ems="10"
+        android:id="@+id/scouterName"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="175dp" />
+
+    <EditText
+        android:layout_width="373dp"
+        android:layout_height="95dp"
+        android:inputType="textPersonName"
+        android:text="Enter Autonomous Comments Here"
+        android:ems="10"
+        android:id="@+id/autoCom"
+        android:layout_marginTop="310dp" />
+
+    <TextView
+        android:text="Autonomous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoTitle"
+        android:layout_marginTop="285dp"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimaryDark" />
+
     <Switch
         android:text="Low Goal"
         android:layout_width="wrap_content"
@@ -175,37 +207,5 @@
         android:id="@+id/shotQual"
         android:layout_marginTop="245dp"
         android:layout_marginLeft="250dp" />
-
-    <TextView
-        android:text="Autonomous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/autoTitle"
-        android:layout_marginTop="285dp"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:textColor="@color/colorPrimaryDark" />
-
-    <EditText
-        android:layout_width="373dp"
-        android:layout_height="95dp"
-        android:inputType="textPersonName"
-        android:text="Enter Autonomous Comments Here"
-        android:ems="10"
-        android:id="@+id/autoCom"
-        android:layout_marginTop="310dp" />
-
-    <Button
-        android:text="Submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/submitBut"
-        android:layout_marginTop="450dp"
-        android:layout_marginLeft="150dp"
-        android:elevation="20dp"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        android:onClick="submitOnClick"/>
 
 </android.support.design.widget.CoordinatorLayout>
