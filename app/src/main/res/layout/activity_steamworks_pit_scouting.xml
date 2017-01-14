@@ -121,10 +121,8 @@
             android:textSize="18sp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/autoHighShootCheck"
-            android:textAlignment="textStart"
-            android:layout_alignLeft="@+id/autoLowShootCheck\"
-            android:layout_alignStart="@+id/autoLowShootCheck\" />
+            android:layout_alignLeft="@+id/autoLowShootCheck"
+            android:layout_alignStart="@+id/autoLowShootCheck" />
 
         <CheckBox
             android:text="Shoot Low?"
@@ -164,8 +162,8 @@
             android:layout_marginTop="9dp"
             android:id="@+id/robotSpeedNum"
             android:hint="How fast robot crosses field (sec)"
-            android:layout_toStartOf="@+id/autoLowShootCheck\"
-            android:layout_toLeftOf="@+id/autoLowShootCheck\" />
+            android:layout_toStartOf="@+id/autoLowShootCheck"
+            android:layout_toLeftOf="@+id/autoLowShootCheck" />
 
         <CheckBox
             android:text="Activates Hopper?"
@@ -292,7 +290,7 @@
             android:layout_alignParentStart="true"
             android:id="@+id/basicStrat"
             android:hint="Basic Strategy"
-            android:layout_toStartOf="@+id/autoLowShootCheck\"
+            android:layout_toStartOf="@+id/autoLowShootCheck"
             android:layout_alignRight="@+id/shootaccuracyNum"
             android:layout_alignEnd="@+id/shootaccuracyNum" />
 
@@ -345,11 +343,6 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/scoutName"
             android:layout_toEndOf="@+id/scoutName" />
-
-        <include layout="@layout/content_steamworks_pit_scouting"
-            android:layout_alignTop="@+id/title"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
 
         <EditText
             android:layout_width="wrap_content"

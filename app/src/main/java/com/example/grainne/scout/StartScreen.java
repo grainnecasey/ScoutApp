@@ -25,10 +25,6 @@ public class StartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
 
-        if (strong_match_file == null) {
-            createFiles();
-        }
-
     }
 
     @Override
@@ -53,7 +49,7 @@ public class StartScreen extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void buttonOnClick(View v) {
+    public void strongButtonOnClick(View v) {
         Intent i = new Intent(StartScreen.this, StrongholdMenu.class);
         startActivity(i);
 
@@ -61,16 +57,11 @@ public class StartScreen extends AppCompatActivity {
 
     }
 
-    public void createFiles() {
-
-        strong_match_root = android.os.Environment.getExternalStorageDirectory();
-        // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
-        strong_match_dir = new File (strong_match_root.getAbsolutePath() + "/download");
-        strong_match_dir.mkdirs();
-        strong_match_file = new File(strong_match_dir, "matchscout.txt");
-
-        filesCreated = true;
-
-
+    public void steamButtonOnClick(View v) {
+        Intent i = new Intent(StartScreen.this, SteamworksMenu.class);
+        startActivity(i);
     }
+
+
+
 }

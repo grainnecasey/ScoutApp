@@ -32,7 +32,7 @@
         android:textSize="18sp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="300dp"
-        android:onClick="buttonOnClick"/>
+        android:onClick="strongButtonOnClick"/>
 
     <TextView
         android:text="Pick Game"
@@ -51,6 +51,7 @@
         android:id="@+id/button2"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="420dp"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        android:onClick="steamButtonOnClick"/>
 
 </android.support.design.widget.CoordinatorLayout>
