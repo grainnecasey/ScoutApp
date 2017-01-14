@@ -130,16 +130,6 @@
             android:layout_alignLeft="@+id/ckbHighIntake"
             android:layout_alignStart="@+id/ckbHighIntake" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:id="@+id/textView16"
-            android:layout_below="@+id/edtStrategic"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textColor="@android:color/black"
-            android:background="@android:color/black" />
-
         <CheckBox
             android:text="Gear Placed"
             android:layout_width="wrap_content"
@@ -161,7 +151,7 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/edtHighGoal"
             android:layout_toEndOf="@+id/edtHighGoal"
-            android:onClick="submitMatchSteamOnClick (SteamworksMatchScouting)"/>
+            android:onClick="submitMatchSteamOnClick"/>
 
         <CheckBox
             android:text="High Intake"
@@ -213,33 +203,6 @@
             android:layout_below="@+id/txtPromptEndGame"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="21dp" />
-
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtName"
-            android:textSize="18sp"
-            android:layout_height="35dp"
-            android:hint="Scouter Name"
-            android:textStyle="normal|bold"
-            android:layout_width="150dp"
-            android:layout_below="@+id/textView16"
-            android:layout_alignRight="@+id/edtLowGoal"
-            android:layout_alignEnd="@+id/edtLowGoal"
-            android:layout_marginTop="80dp" />
-
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edtTeamNum"
-            android:textSize="18sp"
-            android:layout_height="35dp"
-            android:hint="Team #"
-            android:layout_width="100dp"
-            android:textStyle="normal|bold"
-            android:layout_toLeftOf="@+id/ckbClimb"
-            android:layout_toStartOf="@+id/ckbClimb"
-            android:layout_alignBottom="@+id/edtName" />
 
         <TextView
             android:text="Teleop"
@@ -312,6 +275,46 @@
             android:layout_below="@+id/ckbHighIntake"
             android:layout_alignRight="@+id/ckbLowGoal"
             android:layout_alignEnd="@+id/ckbLowGoal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:id="@+id/textView16"
+            android:textColor="@android:color/black"
+            android:background="@android:color/black"
+            android:layout_below="@+id/edtStrategic"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="28dp" />
+
+        <EditText
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtTeamNum"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:hint="Team #"
+            android:layout_width="100dp"
+            android:textStyle="normal|bold"
+            android:textColor="?attr/actionMenuTextColor"
+            android:layout_alignBaseline="@+id/btnSubmit"
+            android:layout_alignBottom="@+id/btnSubmit"
+            android:layout_alignLeft="@+id/edtStrategic"
+            android:layout_alignStart="@+id/edtStrategic" />
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtName"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:hint="Scouter Name"
+            android:textStyle="normal|bold"
+            android:layout_width="150dp"
+            android:layout_alignBaseline="@+id/btnSubmit"
+            android:layout_alignBottom="@+id/btnSubmit"
+            android:layout_alignRight="@+id/edtLowGoal"
+            android:layout_alignEnd="@+id/edtLowGoal" />
 
     </RelativeLayout>
 

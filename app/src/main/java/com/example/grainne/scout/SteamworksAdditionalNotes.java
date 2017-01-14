@@ -48,7 +48,7 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
         Submit = (Button) findViewById(R.id.btnSubmit);
 
 
-        filename = "steamnotes.txt";
+        filename = "steammatchscout.txt";
     }
 
     public void submitAdditionalNotesOnClick(View v) {
@@ -61,7 +61,7 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
         TeamNumSt = TeamNumber.getText().toString();
         ScouterNameSt = ScouterName.getText().toString();
 
-        String output = AdditionalNotesSt + "}" + TeamNumSt + "}" + ScouterNameSt + "}";
+        output = AdditionalNotesSt + "}" + TeamNumSt + "}" + ScouterNameSt + "}" + "\n";
 
         //creating file to save data to
         File dir = new File (root.getAbsolutePath() + "/download/" + filename);
