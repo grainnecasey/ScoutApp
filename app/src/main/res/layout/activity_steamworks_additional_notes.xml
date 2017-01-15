@@ -70,47 +70,47 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edtStrategic"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:hint="Strategic?"
             android:layout_width="match_parent"
             android:layout_below="@+id/txtPromptAdditionalNotes"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_height="40dp" />
+            android:layout_height="50dp" />
 
         <EditText
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edtQuality"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:hint="Quality"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/edtStrategic"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="12dp" />
+            android:layout_alignParentStart="true" />
 
         <EditText
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edtDriveteam"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:hint="Driveteam"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/edtQuality"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="13dp" />
+            android:layout_alignParentStart="true" />
 
         <CheckBox
             android:text="Survive Match"
             android:layout_height="wrap_content"
             android:id="@+id/ckbSurvive"
-            android:textSize="18sp"
-            android:layout_width="150dp"
-            android:layout_centerVertical="true"
+            android:textSize="30sp"
+            android:textColor="@android:color/black"
+            android:layout_width="300dp"
+            android:layout_marginTop="21dp"
+            android:layout_below="@+id/edtDriveteam"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -121,11 +121,13 @@
             android:autoText="false"
             android:gravity="top|center_vertical"
             android:hint="Enter Additional Notes"
-            android:layout_width="355dp"
-            android:layout_height="200dp"
             android:singleLine="false"
+            android:layout_width="600dp"
+            android:layout_height="550dp"
             android:layout_above="@+id/btnSubmit"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 
