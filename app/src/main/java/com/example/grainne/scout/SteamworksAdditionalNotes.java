@@ -86,7 +86,6 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
 
         //creating file to save data to
         File dir = new File (root.getAbsolutePath() + "/download/" + filename);
-        if (TeamNumSt != null || ScouterNameSt != null) {
             if (dir.exists()) {
                 try {
                     FileOutputStream f = new FileOutputStream(dir, true); //true = append mode
@@ -125,17 +124,8 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
             }
             Intent i = new Intent(SteamworksAdditionalNotes.this, SteamworksMenu.class);
             startActivity(i);
-        }else{
-            android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
-            teamnumerror.setMessage("You must enter a team number and your name before submitting").setTitle("Error");
-            teamnumerror.setPositiveButton("Edit Input",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-            teamnumerror.show();
+
         }
     }
 
-}
+

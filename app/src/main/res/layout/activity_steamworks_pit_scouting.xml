@@ -152,7 +152,6 @@
             android:layout_toEndOf="@+id/title" />
 
         <EditText
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
@@ -163,7 +162,8 @@
             android:id="@+id/robotSpeedNum"
             android:hint="How fast robot crosses field (sec)"
             android:layout_toStartOf="@+id/autoLowShootCheck"
-            android:layout_toLeftOf="@+id/autoLowShootCheck" />
+            android:layout_toLeftOf="@+id/autoLowShootCheck"
+            android:layout_width="match_parent" />
 
         <CheckBox
             android:text="Activates Hopper?"
@@ -177,20 +177,6 @@
             android:layout_alignRight="@+id/teleShootLowCheck"
             android:layout_alignEnd="@+id/teleShootLowCheck"
             android:textAlignment="textStart" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/shooterSpeedNum"
-            android:hint="Shooter speed - balls per second"
-            android:layout_alignBaseline="@+id/robotSpeedNum"
-            android:layout_alignBottom="@+id/robotSpeedNum"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/startplaceCheck"
-            android:layout_alignStart="@+id/startplaceCheck" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -392,6 +378,18 @@
             android:layout_alignEnd="@+id/scoutName"
             android:id="@+id/intakeTypeBox"
             android:hint="Intake type? (top/floor)" />
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/shooterSpeedNum"
+            android:hint="Shooter speed - balls per second"
+            android:layout_alignBaseline="@+id/robotSpeedNum"
+            android:layout_alignBottom="@+id/robotSpeedNum"
+            android:layout_alignLeft="@+id/idealAlliance"
+            android:layout_alignStart="@+id/idealAlliance" />
 
     </RelativeLayout>
 

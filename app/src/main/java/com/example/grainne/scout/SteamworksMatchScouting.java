@@ -143,7 +143,17 @@ public class SteamworksMatchScouting extends AppCompatActivity {
 
         //creating file to save data to
         File dir = new File (root.getAbsolutePath() + "/download/" + filename);
-        if (TeamNumSt != null || NameSt != null){
+        if (TeamNumSt == null || NameSt == null){
+            android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
+            teamnumerror.setMessage("You must enter a team number and your name before submitting").setTitle("Error");
+            teamnumerror.setPositiveButton("Edit Input",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+            teamnumerror.show();
+        }else{
 
             if (dir.exists()) {
                 try {
@@ -183,16 +193,6 @@ public class SteamworksMatchScouting extends AppCompatActivity {
             }
             Intent i = new Intent(SteamworksMatchScouting.this, SteamworksAdditionalNotes.class);
             startActivity(i);
-        }else{
-            android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
-            teamnumerror.setMessage("You must enter a team number and your name before submitting").setTitle("Error");
-            teamnumerror.setPositiveButton("Edit Input",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-            teamnumerror.show();
         }
     }
 
