@@ -265,12 +265,12 @@
             android:id="@+id/edtName"
             android:textSize="36sp"
             android:layout_height="wrap_content"
-            android:hint="Scouter Name"
             android:textStyle="normal|bold"
             android:layout_below="@+id/textView16"
             android:layout_toRightOf="@+id/edtCycleTime"
             android:layout_toEndOf="@+id/edtCycleTime"
-            android:layout_width="340dp" />
+            android:layout_width="340dp"
+            android:hint="Scouter Name" />
 
         <Button
             android:text="Submit"
@@ -278,7 +278,7 @@
             android:background="@android:color/holo_green_dark"
             android:textStyle="normal|bold"
             android:textSize="36sp"
-            android:onClick="submitMatchSteamOnClick"
+            android:onClick="submitMatchSteamOnClick (SteamworksMatchScouting)"
             android:layout_width="550dp"
             android:layout_height="80dp"
             android:layout_marginTop="21dp"
@@ -291,14 +291,14 @@
             android:id="@+id/edtTeamNum"
             android:textSize="36sp"
             android:layout_height="wrap_content"
-            android:hint="Team #"
             android:textStyle="normal|bold"
             android:textColor="?attr/actionMenuTextColor"
             android:layout_width="150dp"
             android:layout_alignBaseline="@+id/edtName"
             android:layout_alignBottom="@+id/edtName"
             android:layout_alignLeft="@+id/edtCycleTime"
-            android:layout_alignStart="@+id/edtCycleTime" />
+            android:layout_alignStart="@+id/edtCycleTime"
+            android:hint="Team #" />
 
     </RelativeLayout>
 

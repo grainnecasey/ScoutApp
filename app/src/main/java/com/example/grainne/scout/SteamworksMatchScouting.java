@@ -50,8 +50,6 @@ public class SteamworksMatchScouting extends AppCompatActivity {
     EditText CycleTime;
     EditText TimeToClear;
     EditText GearsPlacedEdt;
-    EditText Strategic;
-    EditText Quality;
     EditText AutoHopper;
     EditText TeleopHopper;
 
@@ -67,9 +65,7 @@ public class SteamworksMatchScouting extends AppCompatActivity {
 
 
 
-
     String filename;
-    String output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,11 +116,7 @@ public class SteamworksMatchScouting extends AppCompatActivity {
         AutoHopperSt = AutoHopper.getText().toString();
         TeleopHopperSt = TeleopHopper.getText().toString();
 
-        if(GearPlacedCkb.isChecked()){
-            GearPlacedBool = true;
-        }else{
-            GearPlacedBool = false;
-        }
+        GearPlacedBool = GearPlacedCkb.isChecked();
         BaselineBool = BaseLine.isChecked();
         HighGoalBool = HighGoalCkb.isChecked();
         LowGoalBool = LowGoalCkb.isChecked();

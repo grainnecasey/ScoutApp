@@ -43,7 +43,6 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
     Boolean SurviveBool;
 
     String filename;
-    String output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +68,6 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
 
     public void submitAdditionalNotesOnClick(View v) {
 
-        //save data as output
-
-        File root = android.os.Environment.getExternalStorageDirectory();
-
         AdditionalNotesSt = AdditionalNotes.getText().toString();
         TeamNumSt = TeamNumber.getText().toString();
         ScouterNameSt = ScouterName.getText().toString();
@@ -82,7 +77,12 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
 
         SurviveBool = Survive.isChecked();
 
-        output = SurviveBool + " }" + QualitySt + " }" + ScouterNameSt + " }" + StrategySt + " }" + DriveteamSt + " }" + AdditionalNotesSt + " }"+ "\n";
+        String output = SurviveBool + " }" + QualitySt + " }" + ScouterNameSt + " }" + StrategySt + " }" + DriveteamSt + " }" + AdditionalNotesSt + " }"+ "\n";
+
+
+        //save data as output
+
+        File root = android.os.Environment.getExternalStorageDirectory();
 
         //creating file to save data to
         File dir = new File (root.getAbsolutePath() + "/download/" + filename);
@@ -101,27 +101,8 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else {
-
-
-                //File file = new File(dir, filename);
-
-                try {
-                    dir.createNewFile();
-                    FileOutputStream f = new FileOutputStream(dir);
-                    PrintWriter pw = new PrintWriter(f);
-                    pw.println(output);
-                    pw.flush();
-                    pw.close();
-                    f.close();
-                    System.out.println(dir.getAbsolutePath());
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                    Log.i("FILENOTFOUND", "******* File not found");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
+
             Intent i = new Intent(SteamworksAdditionalNotes.this, SteamworksMenu.class);
             startActivity(i);
 
