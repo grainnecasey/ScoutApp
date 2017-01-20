@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -94,7 +95,7 @@ public class SteamworksPitScouting extends AppCompatActivity {
         idealAlliTxt = (EditText) findViewById(R.id.idealAlliance);
         ballCapNum = (EditText) findViewById(R.id.ballCapacNum);
         fieldUsageTxt = (EditText) findViewById(R.id.whereInField);
-        scoutNameTxt = (EditText) findViewById(R.id.scouterName);
+        scoutNameTxt = (EditText) findViewById(R.id.scoutName);
         teamNumNum = (EditText) findViewById(R.id.teamNum);
         addNotesTxt = (EditText) findViewById(R.id.exNotes);
         intakeTxt = (EditText) findViewById(R.id.intakeTypeBox);
@@ -143,16 +144,9 @@ public class SteamworksPitScouting extends AppCompatActivity {
         //creating file to save data to
         File dir = new File(root.getAbsolutePath() + "/download/" + filename);
 
-        if (teamNum == null || scoutName == null) {
-            android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
-            teamnumerror.setMessage("You must enter a team number and scouter name before submitting").setTitle("Error");
-            teamnumerror.setPositiveButton("Edit Input",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-            teamnumerror.show();
+        if (teamNum.trim().isEmpty() || scoutName.trim().isEmpty()) {
+            Toast.makeText(this, "plz enter your name or/and team #", Toast.LENGTH_SHORT).show();
+            return;
         } else {
             if (dir.exists()) {
                 try {

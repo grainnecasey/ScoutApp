@@ -19,26 +19,24 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="TextView"
+            android:text="Pit Scouting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:id="@+id/title"
             android:textStyle="normal|bold"
             android:textAlignment="center"
-            tools:text="Pit Scouting"
             android:textSize="36sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
         <TextView
-            android:text="TextView"
+            android:text="Auto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
             android:id="@+id/autoTitle"
             android:textStyle="normal|bold"
-            tools:text="Auto"
             android:textSize="30sp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -328,7 +326,8 @@
             android:backgroundTint="@color/colorPrimary"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/scoutName"
-            android:layout_toEndOf="@+id/scoutName" />
+            android:layout_toEndOf="@+id/scoutName"
+            android:onClick="submitOnClick" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -344,15 +343,27 @@
             android:onClick="submitPitSteamOnClick"/>
 
         <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/shooterSpeedNum"
+            android:hint="Shooter speed - balls per second"
+            android:layout_alignBaseline="@+id/robotSpeedNum"
+            android:layout_alignBottom="@+id/robotSpeedNum"
+            android:layout_alignLeft="@+id/idealAlliance"
+            android:layout_alignStart="@+id/idealAlliance" />
+
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/teamNum"
             android:hint="Team Number "
-            android:layout_below="@+id/scoutName"
-            android:layout_alignLeft="@+id/scoutName"
-            android:layout_alignStart="@+id/scoutName" />
+            android:layout_above="@+id/submitBut"
+            android:layout_toLeftOf="@+id/submitBut"
+            android:layout_toStartOf="@+id/submitBut" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -373,23 +384,11 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:layout_above="@+id/scoutName"
-            android:layout_alignRight="@+id/scoutName"
-            android:layout_alignEnd="@+id/scoutName"
             android:id="@+id/intakeTypeBox"
-            android:hint="Intake type? (top/floor)" />
-
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/shooterSpeedNum"
-            android:hint="Shooter speed - balls per second"
-            android:layout_alignBaseline="@+id/robotSpeedNum"
-            android:layout_alignBottom="@+id/robotSpeedNum"
-            android:layout_alignLeft="@+id/idealAlliance"
-            android:layout_alignStart="@+id/idealAlliance" />
+            android:hint="Intake type? (top/floor)"
+            android:layout_below="@+id/whereInField"
+            android:layout_alignLeft="@+id/scoutName"
+            android:layout_alignStart="@+id/scoutName" />
 
     </RelativeLayout>
 

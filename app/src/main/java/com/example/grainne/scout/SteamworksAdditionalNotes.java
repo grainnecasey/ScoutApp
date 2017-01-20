@@ -25,8 +25,6 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
     Button Submit;
 
     EditText AdditionalNotes;
-    EditText TeamNumber;
-    EditText ScouterName;
     EditText Strategy;
     EditText Quality;
     EditText Driveteam;
@@ -52,8 +50,6 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         AdditionalNotes = (EditText) findViewById(R.id.edtAdditionalNotes);
-        TeamNumber = (EditText) findViewById(R.id.edtTeamNum);
-        ScouterName = (EditText) findViewById(R.id.edtName);
         Strategy = (EditText) findViewById(R.id.edtStrategic);
         Quality = (EditText) findViewById(R.id.edtQuality);
         Driveteam = (EditText) findViewById(R.id.edtDriveteam);
@@ -66,18 +62,16 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
         filename = "steammatchscout.txt";
     }
 
-    public void submitAdditionalNotesOnClick(View v) {
+    public void submitSteamAdditionalNotesOnClick(View v) {
 
         AdditionalNotesSt = AdditionalNotes.getText().toString();
-        TeamNumSt = TeamNumber.getText().toString();
-        ScouterNameSt = ScouterName.getText().toString();
         StrategySt = Strategy.getText().toString();
         QualitySt = Quality.getText().toString();
         DriveteamSt = Driveteam.getText().toString();
 
         SurviveBool = Survive.isChecked();
 
-        String output = SurviveBool + " }" + QualitySt + " }" + ScouterNameSt + " }" + StrategySt + " }" + DriveteamSt + " }" + AdditionalNotesSt + " }"+ "\n";
+        String output = SurviveBool + " }" + QualitySt + " }" + StrategySt + " }" + DriveteamSt + " }" + AdditionalNotesSt + " }"+ "\n";
 
 
         //save data as output

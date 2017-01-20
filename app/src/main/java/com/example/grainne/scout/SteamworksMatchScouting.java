@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -103,7 +104,7 @@ public class SteamworksMatchScouting extends AppCompatActivity {
 
 
 
-    public void submitMatchSteamOnClick(View v) {
+    public void submitMatchSteamworksOnClick(View v) {
 
         TeamNumSt = TeamNum.getText().toString();
         NameSt = ScoutName.getText().toString();
@@ -135,16 +136,9 @@ public class SteamworksMatchScouting extends AppCompatActivity {
 
         //creating file to save data to
         File dir = new File (root.getAbsolutePath() + "/download/" + filename);
-        if (TeamNumSt == null || NameSt == null){
-            android.app.AlertDialog.Builder teamnumerror = new android.app.AlertDialog.Builder(this);
-            teamnumerror.setMessage("You must enter a team number and your name before submitting").setTitle("Error");
-            teamnumerror.setPositiveButton("Edit Input",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-            teamnumerror.show();
+        if (TeamNumSt.trim().isEmpty()|| NameSt.trim().isEmpty()){
+            Toast.makeText(this, "plz enter your name or/and team #", Toast.LENGTH_SHORT).show();
+            return;
         }else{
 
             if (dir.exists()) {

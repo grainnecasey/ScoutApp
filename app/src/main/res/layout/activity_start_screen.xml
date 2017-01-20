@@ -16,42 +16,42 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:text="STRONGHOLD"
-        android:layout_width="171dp"
-        android:layout_height="71dp"
-        android:id="@+id/stronghold"
-        android:textSize="18sp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="300dp"
-        android:onClick="strongButtonOnClick"/>
+        <TextView
+            android:text="Pick Game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:textSize="60sp"
+            android:layout_alignBottom="@+id/stronghold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="139dp" />
 
-    <TextView
-        android:text="Pick Game"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/title"
-        android:textSize="50sp"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="150dp"
-        />
+        <Button
+            android:text="STRONGHOLD"
+            android:layout_width="171dp"
+            android:layout_height="71dp"
+            android:id="@+id/stronghold"
+            android:textSize="18sp"
+            android:onClick="strongButtonOnClick"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="138dp" />
 
-    <Button
-        android:text="STEAMWORKS"
-        android:layout_width="171dp"
-        android:layout_height="73dp"
-        android:id="@+id/button2"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="420dp"
-        android:textSize="17sp"
-        android:onClick="steamButtonOnClick"/>
+        <Button
+            android:text="STEAMWORKS"
+            android:layout_width="171dp"
+            android:layout_height="73dp"
+            android:id="@+id/button2"
+            android:textSize="17sp"
+            android:onClick="steamButtonOnClick"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/stronghold"
+            android:layout_alignStart="@+id/stronghold"
+            android:layout_marginBottom="396dp" />
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
