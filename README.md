@@ -19,5 +19,9 @@ In both the matching and scouting section there will be a lot of places to check
 
 Decoder:
 
+The decoder takes the data sent from the Scouting App and converts it into text. The output is sorted into 'Pit' and 'Match' arrays. 
 
+The decoder comes with a search system, allowing for you to look up the any of the data of any team from any match (that someone on your team scouted). This works for both 'Pit' data and 'Match' data.
+
+Also, the decoder comes with a sort system. This will sort by any given data point from either 'Match' or 'Pit'. It will put the more favorable results on the top, and leave the less favorable results on the bottom.
 
