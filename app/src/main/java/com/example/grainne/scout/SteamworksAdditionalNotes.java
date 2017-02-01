@@ -41,10 +41,18 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
     Boolean SurviveBool;
 
     String filename;
+    String matchoutput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle b = getIntent().getExtras();
+        if(b != null)
+            matchoutput = b.getString("matchOutput");
+
+
         setContentView(R.layout.activity_steamworks_additional_notes);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,7 +79,7 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
 
         SurviveBool = Survive.isChecked();
 
-        String output = SurviveBool + " }" + QualitySt + " }" + StrategySt + " }" + DriveteamSt + " }" + AdditionalNotesSt + " }"+ "\n";
+        String output = matchoutput + SurviveBool + " }" + QualitySt + " }" + StrategySt + " }" + DriveteamSt + " }" + AdditionalNotesSt + " }"+ "\n";
 
 
         //save data as output
@@ -88,6 +96,22 @@ public class SteamworksAdditionalNotes extends AppCompatActivity {
                     osw.flush();
                     osw.close();
 
+                    System.out.println(dir.getAbsolutePath());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Log.i("FILENOTFOUND", "******* File not found");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                try {
+                    dir.createNewFile();
+                    FileOutputStream f = new FileOutputStream(dir);
+                    PrintWriter pw = new PrintWriter(f);
+                    pw.println(output);
+                    pw.flush();
+                    pw.close();
+                    f.close();
                     System.out.println(dir.getAbsolutePath());
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();

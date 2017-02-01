@@ -130,7 +130,7 @@ public class SteamworksPitScouting extends AppCompatActivity {
         addNotes = addNotesTxt.getText().toString();
         intake = intakeTxt.getText().toString();
 
-        output = teamNum + "}" + autoGear + "}" + autoShootHigh + "}" + autoShootLow + "}" + autoHop + "}" +
+        output = teamNum + "}" + "pit" + "}" + autoGear + "}" + autoShootHigh + "}" + autoShootLow + "}" + autoHop + "}" +
                 specStart + "}" + teleGear + "}" + teleShootHigh + "}" + teleShootLow + "}" + roboSpeed + "}" +
                 shootSpeed + "}" + shootAcc + "}" + canClimb + "}" + climbSpeed + "}" + endStrat + "}" +
                 strat + "}" + idealAlli + "}" + ballCap + "}" + fieldUsage + "}" + scoutName + "}" + addNotes

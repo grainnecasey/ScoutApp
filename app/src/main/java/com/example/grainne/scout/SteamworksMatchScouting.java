@@ -125,7 +125,7 @@ public class SteamworksMatchScouting extends AppCompatActivity {
         HighIntakeBool = HighIntake.isChecked();
         ClimbBool = Climb.isChecked();
 
-        String output = TeamNumSt + "}" + GearPlacedBool + "}" + WhichGearStationSt + "}" + BaselineBool + "}" +
+        String output = TeamNumSt + "}" + "match" + "}" + GearPlacedBool + "}" + WhichGearStationSt + "}" + BaselineBool + "}" +
                 LowGoalMadeSt + "}" + HighGoalMadeSt + "}" + AutoHopperSt + "}" + LowGoalBool + "}" + HighGoalBool
                 + "}" + GearsPlacedSt + "}" + CycleTimeSt + "}" + TimeToClearSt + "}" + ClimbBool + "}";
 
@@ -141,7 +141,7 @@ public class SteamworksMatchScouting extends AppCompatActivity {
             return;
         }else{
 
-            if (dir.exists()) {
+           /* if (dir.exists()) {
                 try {
                     FileOutputStream f = new FileOutputStream(dir, true); //true = append mode
                     OutputStreamWriter osw = new OutputStreamWriter(f);
@@ -176,8 +176,11 @@ public class SteamworksMatchScouting extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+            }*/
             Intent i = new Intent(SteamworksMatchScouting.this, SteamworksAdditionalNotes.class);
+            Bundle b = new Bundle();
+            b.putString("matchOutput", output); //Your id
+            i.putExtras(b);
             startActivity(i);
         }
     }
