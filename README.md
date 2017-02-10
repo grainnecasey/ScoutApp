@@ -7,11 +7,13 @@ Welcome to Team 811's scouting app for the Steamworks Game.  This guide goes ove
 
 Scouting App:
 
+The scouting app was designed to be run on 6 Kindles or other devices that would each scout one team each match. It has forms to fill out for both match and pit scouting, both of which will save the data to a file that will be imported into the decoder. 
+
 First, there will be a Pick Game menu, use the Steamworks game menu only because the Stronghold game was used as a test and is not fully fuctional
 
 Second, there will be a menu to lead to either the match scouting menu or the pit scouting menu.  Select the proper menu based on the type of scouting is being done.
 
-In both the matching and scouting section there will be a lot of places to check off and enter numbers into many questions.  Please select or type the apporpriate response to each question.
+In both the matching and scouting section there will be a lot of places to check off and enter numbers into many questions.  Please select or type the apporpriate response to each question. All questions are looking for a certain data type as a response so be mindful of what you are inputting. For example, the Match Scouting form will ask about which gear hook a team used to place a gear. This answer must be either 1, 2, or 3 (when looking on from the driver station perspective, 1 is left, 2 is middle, 3 is right). Most other inputs are self explanatory. After the match scouting form, the app will immediately bring you to an additional notes page where you can leave general comments on the team's performance during this match. 
 
 
 
