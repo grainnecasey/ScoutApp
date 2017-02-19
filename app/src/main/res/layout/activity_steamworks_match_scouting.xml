@@ -33,30 +33,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <EditText
-            android:inputType="number"
-            android:ems="10"
-            android:layout_below="@+id/ckbGearPlaced"
-            android:layout_alignLeft="@+id/ckbGearPlaced"
-            android:layout_alignStart="@+id/ckbGearPlaced"
-            android:id="@+id/edtHighGoal"
-            android:textSize="24sp"
-            android:hint="High Goal Made"
-            android:layout_height="45dp"
-            android:layout_width="200dp" />
-
-        <EditText
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/edtLowGoal"
-            android:textSize="24sp"
-            android:hint="Low Goal Made"
-            android:layout_below="@+id/ckbBaseline"
-            android:layout_alignLeft="@+id/ckbBaseline"
-            android:layout_alignStart="@+id/ckbBaseline"
-            android:layout_height="45dp"
-            android:layout_width="200dp" />
-
         <CheckBox
             android:text="High Goal"
             android:layout_width="wrap_content"
@@ -146,35 +122,9 @@
         <EditText
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/edtAutoHopper"
-            android:textSize="24sp"
-            android:layout_height="45dp"
-            android:hint="Hopper"
-            android:textAlignment="viewStart"
-            android:layout_below="@+id/edtLowGoal"
-            android:layout_alignLeft="@+id/edtLowGoal"
-            android:layout_alignStart="@+id/edtLowGoal"
-            android:layout_width="200dp" />
-
-        <EditText
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/edtStation"
-            android:textSize="24sp"
-            android:hint="Which Gear Station"
-            android:textAlignment="viewStart"
-            android:layout_below="@+id/edtHighGoal"
-            android:layout_alignLeft="@+id/edtHighGoal"
-            android:layout_alignStart="@+id/edtHighGoal"
-            android:layout_height="45dp"
-            android:layout_width="220dp" />
-
-        <EditText
-            android:inputType="number"
-            android:ems="10"
             android:id="@+id/edtCycleTime"
             android:textSize="24sp"
-            android:hint="Cycle Time"
+            android:hint="Number of Cycles"
             android:layout_below="@+id/ckbLowIntake"
             android:layout_alignLeft="@+id/ckbLowIntake"
             android:layout_alignStart="@+id/ckbLowIntake"
@@ -299,6 +249,68 @@
             android:layout_alignLeft="@+id/edtCycleTime"
             android:layout_alignStart="@+id/edtCycleTime"
             android:hint="Team #" />
+
+        <EditText
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtLowGoal"
+            android:textSize="24sp"
+            android:hint="Low Goal Made"
+            android:layout_height="45dp"
+            android:layout_width="200dp"
+            android:layout_below="@+id/edtStation"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <CheckBox
+            android:text="Hopper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkHopperAuto"
+            android:textSize="30sp"
+            android:layout_alignLeft="@+id/edtLowGoal"
+            android:layout_alignStart="@+id/edtLowGoal"
+            android:layout_above="@+id/txtPromptTeleop" />
+
+        <EditText
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtHighGoal"
+            android:textSize="24sp"
+            android:hint="High Goal Made"
+            android:layout_height="45dp"
+            android:layout_width="200dp"
+            android:layout_below="@+id/edtStation"
+            android:layout_alignLeft="@+id/btnSubmit"
+            android:layout_alignStart="@+id/btnSubmit" />
+
+        <EditText
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/edtStation"
+            android:textSize="24sp"
+            android:hint="Which Gear Station"
+            android:textAlignment="viewStart"
+            android:layout_height="45dp"
+            android:layout_width="220dp"
+            android:layout_below="@+id/ckbGearPlaced"
+            android:layout_alignLeft="@+id/ckbGearPlaced"
+            android:layout_alignStart="@+id/ckbGearPlaced" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_below="@+id/edtGearsPlaced"
+            android:id="@+id/edtHighAcc"
+            android:hint="High Goal Accuracy (out of 10)"
+            android:textSize="24sp"
+            android:layout_alignLeft="@+id/edtCycleTime"
+            android:layout_alignStart="@+id/edtCycleTime"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="center" />
 
     </RelativeLayout>
 
